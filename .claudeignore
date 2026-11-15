@@ -1,0 +1,75 @@
+# ==============================================================================
+# .claudeignore - Claude Code Token Optimization & Context Boundary Rules
+# ==============================================================================
+
+# 1. Build outputs & generated artifacts (Critical token sinks)
+dist/
+build/
+out/
+.cache/
+.next/
+.nuxt/
+
+# 2. Minified & compiled bundle assets (Source in src/input.css & tailwind.config.js)
+assets/css/tailwind.css
+*.min.css
+*.min.js
+*.map
+
+# 3. Large lockfiles & dependency trees (Inspect package.json instead)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+bun.lockb
+node_modules/
+
+# 4. Deprecated legacy standalone versions (170KB+ HTML token sink)
+single-file/
+
+# 5. Runtime storage, lead data, logs, and environment secrets
+api/leads.csv
+*.csv
+*.tsv
+*.log
+*.tmp
+.env
+.env.*
+.env.local
+
+# 6. Test coverage & tooling caches
+coverage/
+.nyc_output/
+.turbo/
+.parcel-cache/
+
+# 7. Media, binary assets, and document archives
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.avif
+*.svg
+*.ico
+*.mp4
+*.webm
+*.pdf
+*.zip
+*.tar
+*.tar.gz
+*.gz
+*.rar
+*.7z
+*.woff
+*.woff2
+*.ttf
+*.eot
+
+# 8. OS and editor metadata
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*~

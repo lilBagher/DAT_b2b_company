@@ -1,0 +1,4 @@
+# فایل لیدها نباید از وب قابل دانلود باشد
+<FilesMatch "\.(csv|log)$">
+  Require all denied
+</FilesMatch>

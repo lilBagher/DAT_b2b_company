@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# Production build output
+dist/
+
+# Security, customer data & environment secrets
+api/leads.csv
+*.csv
+*.tsv
+*.log
+.env
+.env.*
+!.env.example
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
