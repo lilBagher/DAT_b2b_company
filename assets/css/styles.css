@@ -1,35 +1,61 @@
 /* استایل‌های اختصاصی وب‌سایت شرکت مراقبتی حفاظتی دیدبان امین توانا */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
-      font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif;
-      background-color: #F4F7FA;
-      color: #0F172A;
-      overflow-x: hidden;
-    }
-    .watermark-pattern {
-      background-image: repeating-linear-gradient(
-        -35deg,
-        rgba(27, 54, 93, 0.06) 0px,
-        rgba(27, 54, 93, 0.06) 2px,
-        transparent 2px,
-        transparent 38px
-      );
-    }
-    .hero-grid-bg {
-      background-color: #1B365D;
-      background-image:
-        radial-gradient(circle at 15% 20%, rgba(37, 99, 235, 0.28) 0%, transparent 45%),
-        radial-gradient(circle at 85% 80%, rgba(197, 155, 39, 0.18) 0%, transparent 40%),
-        linear-gradient(135deg, #11233F 0%, #1B365D 60%, #1E3E6D 100%);
-    }
-    /* Custom Range Slider */
-    input[type="range"] {
-      accent-color: #2563EB;
-    }
-    @media print {
-      .no-print {
-        display: none !important;
-      }
-      .print-only {
-        display: block !important;
-      }
-    }
+  font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif;
+  background-color: #F4F7FA;
+  color: #0F172A;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* رفع زوم ناخواسته در مرورگر سافاری آیفون (iOS) */
+@media screen and (max-width: 640px) {
+  input[type="text"],
+  input[type="tel"],
+  input[type="search"],
+  input[type="email"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* پشتیبانی از نوار ناوبری پایین در آیفون (Safe Area Inset) */
+.safe-area-bottom {
+  padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
+}
+
+.watermark-pattern {
+  background-image: repeating-linear-gradient(
+    -35deg,
+    rgba(27, 54, 93, 0.06) 0px,
+    rgba(27, 54, 93, 0.06) 2px,
+    transparent 2px,
+    transparent 38px
+  );
+}
+
+.hero-grid-bg {
+  background-color: #1B365D;
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(37, 99, 235, 0.28) 0%, transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(197, 155, 39, 0.18) 0%, transparent 40%),
+    linear-gradient(135deg, #11233F 0%, #1B365D 60%, #1E3E6D 100%);
+}
+
+/* Custom Range Slider */
+input[type="range"] {
+  accent-color: #2563EB;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}

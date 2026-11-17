@@ -29,21 +29,28 @@ function clean($v, $max = 300) {
     $v = trim(preg_replace('/[\x00-\x1F\x7F]+/u', ' ', $v));
     $v = mb_substr($v, 0, $max, 'UTF-8');
     // جلوگیری از تزریق فرمول در اکسل
-    if ($v !== '' && strpos('=+-@', $v[0]) !== false) $v = "'" . $v;
+    if ($v !== '' && strpos("=+-@\t\r", $v[0]) !== false) $v = "'" . $v;
     return $v;
 }
 function digits($s) {
-    return strtr($s, ['۰'=>'0','۱'=>'1','۲'=>'2','۳'=>'3','۴'=>'4','۵'=>'5','۶'=>'6','۷'=>'7','۸'=>'8','۹'=>'9']);
+    return strtr($s, [
+        '۰'=>'0','۱'=>'1','۲'=>'2','۳'=>'3','۴'=>'4','۵'=>'5','۶'=>'6','۷'=>'7','۸'=>'8','۹'=>'9',
+        '٠'=>'0','١'=>'1','٢'=>'2','٣'=>'3','٤'=>'4','٥'=>'5','٦'=>'6','٧'=>'7','٨'=>'8','٩'=>'9'
+    ]);
 }
 
 $mobile = preg_replace('/\D/', '', digits((string)($d['mobile'] ?? '')));
+if (preg_match('/^0098(9\d{9})$/', $mobile, $m)) $mobile = '0' . $m[1];
+elseif (preg_match('/^98(9\d{9})$/', $mobile, $m)) $mobile = '0' . $m[1];
+elseif (preg_match('/^9\d{9}$/', $mobile)) $mobile = '0' . $mobile;
+
 if (!preg_match('/^09\d{9}$/', $mobile)) { http_response_code(422); echo '{"ok":false,"error":"mobile"}'; exit; }
 
-// محدودیت ساده: حداکثر ۵ ثبت در ساعت از هر IP
-$ip = $_SERVER['REMOTE_ADDR'] ?? '';
+// محدودیت ساده: حداکثر ۱۵ ثبت در ساعت از هر IP
+$ip = $_SERVER['HTTP_CF_CONNECTING_IP'] ?? $_SERVER['HTTP_X_REAL_IP'] ?? $_SERVER['REMOTE_ADDR'] ?? '';
 $rl = sys_get_temp_dir() . '/dideban_rl_' . md5($ip);
 $hits = array_filter(is_file($rl) ? (array)json_decode(@file_get_contents($rl), true) : [], fn($t) => $t > time() - 3600);
-if (count($hits) >= 5) { http_response_code(429); echo '{"ok":false}'; exit; }
+if (count($hits) >= 15) { http_response_code(429); echo '{"ok":false}'; exit; }
 $hits[] = time();
 @file_put_contents($rl, json_encode(array_values($hits)));
 
@@ -60,7 +67,7 @@ $row = [
 ];
 
 $file = __DIR__ . '/leads.csv';
-$new = !is_file($file);
+$new = !is_file($file) || filesize($file) === 0;
 $fh = @fopen($file, 'a');
 if (!$fh) { http_response_code(500); echo '{"ok":false}'; exit; }
 flock($fh, LOCK_EX);

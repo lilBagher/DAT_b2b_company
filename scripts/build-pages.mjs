@@ -43,7 +43,7 @@ const pages = [
       ['آیا استقرار لابی‌من در اتاق نگهبانی حق سکونت ایجاد می‌کند؟', 'خیر. نیروهای شیفتی صرفاً در ساعت شیفت در اتاق نگهبانی حضور دارند و هیچ‌گونه حق سکونت یا تصرف در مشاعات ایجاد نمی‌شود؛ برخلاف اسکان سرایدار شخصی که در زمان قطع همکاری می‌تواند به دعوای تخلیه منجر شود.'],
       ['اگر از عملکرد یکی از نیروها راضی نباشیم چه می‌شود؟', 'کارفرما می‌تواند با اعلام کتبی، تعویض نیرو را بخواهد و جایگزینی دائم ظرف حداکثر ۴۸ ساعت و بدون هزینه اضافی انجام می‌شود.']
     ],
-    related: ['industrial-plant-security', 'construction-site-guarding']
+    related: ['industrial-plant-security', 'commercial-complex-security', 'construction-site-guarding']
   },
   {
     slug: 'industrial-plant-security',
@@ -72,7 +72,7 @@ const pages = [
       ['آیا فاکتور رسمی مالیاتی صادر می‌شود؟', 'بله، فاکتور رسمی با شناسه ملی ۱۴۰۱۲۱۰۷۸۱۷ صادر می‌شود.'],
       ['اگر نگهبان در شیفت حادثه‌ای ببیند مسئولیت با کیست؟', 'کلیه نیروها از روز نخست استقرار تحت پوشش بیمه تأمین اجتماعی و بیمه حوادث و مسئولیت مدنی شرکت قرار دارند و مسئولیت کارفرمایی و بیمه‌ای نیروها بر عهده شرکت است.']
     ],
-    related: ['lobby-man-residential-towers', 'construction-site-guarding']
+    related: ['lobby-man-residential-towers', 'commercial-complex-security', 'construction-site-guarding']
   },
   {
     slug: 'construction-site-guarding',
@@ -101,7 +101,65 @@ const pages = [
       ['تعداد نگهبان با پیشرفت پروژه قابل تغییر است؟', 'بله، در فاز نازک‌کاری و تأسیسات می‌توان تعداد پست‌ها را افزایش داد و پس از پایان ساخت، پست را به لابی‌من تبدیل کرد.'],
       ['خروج ابزار و مصالح از کارگاه چگونه کنترل می‌شود؟', 'هرگونه خروج ابزار، کابل و مصالح فقط با برگه خروج امضاشده توسط سرپرست کارگاه یا مهندس مقیم مجاز است و انبارک‌ها پلمب می‌شوند.']
     ],
-    related: ['lobby-man-residential-towers', 'industrial-plant-security']
+    related: ['lobby-man-residential-towers', 'residential-compound-security', 'industrial-plant-security']
+  },
+  {
+    slug: 'commercial-complex-security',
+    short: 'حراست مجتمع تجاری و مال',
+    title: 'حراست مجتمع تجاری و مرکز خرید | تأمین نگهبان و انتظامات پاساژ',
+    description: 'تأمین تیم حراست و انتظامات تشریفاتی مجتمع‌های تجاری، مال‌ها و پاساژها با کنترل مانیتورینگ، هدایت مراجعین، پیشگیری از سرقت و اطفای حریق. درخواست بازدید فنی رایگان.',
+    h1: 'تأمین حراست، انتظامات و لابی‌من مجتمع تجاری و مراکز خرید',
+    lead: 'مراکز تجاری و هایپرمارکت‌ها به دلیل تراکم بالای مراجعین و تردد نقلیه، نیازمند انتظامات چندمنظوره هستند: حفظ پرستیژ تجاری، گشت‌زنی مشاعات، مانیتورینگ پارکینگ و پیشگیری از سرقت فروشگاهی. نیروهای دیدبان امین توانا با یونیفرم هماهنگ و آموزش مدیریت بحران مستقر می‌شوند.',
+    audience: 'ویژه مدیران عامل مراکز خرید، هیئت‌مدیره پاساژها و مالکان هایپرمارکت‌ها و مراکز تفریحی-اداری',
+    facility: 'مجتمع تجاری / مرکز خرید',
+    estimator: 'tower',
+    features: [
+      ['🛍️', 'پایش ورودی‌ها و گیت‌های خروجی', 'کنترل محترمانه تردد، مدیریت پیک‌های باربری، جلوگیری از تردد دست‌فروشان و هدایت مراجعین به راهنما و اطلاعات.'],
+      ['🚗', 'انتظامات پارکینگ و هدایت خودروها', 'پایش رمپ‌های ورود و خروج، ساماندهی ترافیک طبقات پارکینگ و پیشگیری از تصادفات و خسارت به خودروهای پارک‌شده.'],
+      ['📹', 'مانیتورینگ تخصصی و پیشگیری از سرقت', 'استقرار اپراتور مسلط بر اتاق CCTV جهت رصد هم‌زمان زوایای کور مغازه‌ها، پاگردها، آسانسورها و پله‌های برقی.'],
+      ['🧯', 'مدیریت ازدحام و آمادگی تخلیه اضطراری', 'آموزش‌دیده در مدیریت بحران، اطفای حریق اولیه، کمک‌های اولیه و راهنمایی ایمن مراجعین در زمان حوادث غیرمترقبه.']
+    ],
+    sla: [
+      ['الگوی شیفت پیشنهادی', 'شیفت‌های ۱۲ ساعته گردشی و پوشش ساعات اوج خرید (۱۰ صبح تا ۲۳ شب)'],
+      ['پوشش ظاهری پرسنل', 'کت و شلوار فرم تشریفاتی با بج سینه رسمی یا لباس انتظامات یکدست'],
+      ['زمان استقرار نیروی جایگزین', 'حداکثر زیر ۳ ساعت در شرایط غیبت یا بیماری'],
+      ['ضمانت عدم سوءپیشینه و وثیقه', '۱۰۰٪ گزینش ۵ مرحله‌ای پلیس انتظام و ضمانت حسن انجام کار']
+    ],
+    faq: [
+      ['آیا پرسنل انتظامات برای کاربری‌های شلوغ تجاری آموزش دیده‌اند؟', 'بله، نیروهای اعزامی دوره‌های کنترل خشم، رفتار حرفه‌ای با مشتریان (Customer Care) و فن بیان تشریفاتی را گذرانده‌اند.'],
+      ['در روزهای حراجی یا بلک‌فرایدی امکان افزایش تعداد نیرو وجود دارد؟', 'بله، دیدبان امین توانا به عنوان پیمانکار جامع، امکان تأمین سریع نیروی کمکی موقت (Event Security) برای ایام پیک و رویدادهای تجاری را داراست.'],
+      ['تعهدات بیمه مسئولیت مدنی برای حوادث احتمالی مراجعین چگونه است؟', 'کلیه نیروها و فعالیت‌های حراستی تحت پوشش بیمه مسئولیت مدنی جامع شرکت قرار دارند.']
+    ],
+    related: ['lobby-man-residential-towers', 'industrial-plant-security', 'residential-compound-security']
+  },
+  {
+    slug: 'residential-compound-security',
+    short: 'حفاظت شهرک مسکونی و ویلایی',
+    title: 'حفاظت و نگهبانی شهرک مسکونی و ویلایی | گشت‌زنی شبانه و گیت ورودی',
+    description: 'تأمین نگهبان، گیت ورودی و گشت موتوری شهرک‌های ویلایی و مجتمع‌های مسکونی با ثبت RFID، بازرسی شبانه نامحسوس و تعهد کتبی امنیت محیطی. استعلام هزینه و بازدید رایگان.',
+    h1: 'حفاظت و تأمین نگهبان شهرک‌های مسکونی، ویلایی و باغ‌شهرها',
+    lead: 'شهرک‌های ویلایی و مجتمع‌های مسکونی محصور به دلیل وسعت محیطی و عدم سکونت دائمی مالکان، هدف اصلی دستبردهای شبانه هستند. سامانه حفاظتی دیدبان امین توانا با ترکیب کنترل گیت ورودی، گشت موتوری منظم و تگ‌گذاری RFID، امنیت کامل شهرک را در ۲۴ ساعت شبانه‌روز تضمین می‌کند.',
+    audience: 'ویژه اعضای هیئت‌امنای شهرک‌های ویلایی، مالکان باغ‌ویلاها و مجتمع‌های مسکونی باغ‌شهر',
+    facility: 'شهرک ویلایی / مسکونی',
+    estimator: 'tower',
+    features: [
+      ['🚧', 'گیت ورودی، پلاک‌خوان و احراز هویت', 'ثبت دقیق پلاک خودروهای ورودی، هماهنگی تلفنی با مالکان قبل از ورود مهمان یا پیمانکار و ثبت هویت اکیپ‌های باغبانی و ساختمانی.'],
+      ['🏍️', 'گشت‌زنی منظم موتوری با ثبت RFID', 'سرکشی مستمر به خیابان‌ها، بن‌بست‌ها و فنس‌های حاشیه‌ای شهرک با موتورسیلکت یا خودرو و ثبت تگ‌های دیجیتال گشت.'],
+      ['🛑', 'جلوگیری از ساخت‌وساز غیرمجاز و تخلفات', 'پایش تردد مصالح ساختمانی در ساعات غیرمجاز، صیانت از مشاعات شهرک و ممانعت از ایجاد مزاحمت صوتی یا امنیتی.'],
+      ['📡', 'ارتباط بیسیم اختصاصی و اعزام پشتیبان', 'تجهیز پست‌های ایست و گشت‌زنان به بیسیم‌های مجاز شبکه انتظام و امکان فراخوان سریع گشت ضربت در موارد مشکوک.']
+    ],
+    sla: [
+      ['الگوی شیفت پیشنهادی', '۲۴-۴۸ ساعته یا شیفت‌های ثابت شب و روز با سرشیفت مقیم'],
+      ['تجهیزات عملیاتی', 'چراغ‌قوه برد بلند، دستگاه ثبت گشت دیجیتال، بیسیم مجاز، جلیقه شب‌رنگ'],
+      ['بازرسی نامحسوس شبانه', 'حداقل ۳ نوبت سرکشی هفتگی توسط بازرس انتظامی شرکت'],
+      ['بیمه حوادث و مسئولیت مدنی', 'پوشش کامل ۱۰۰٪ بیمه تأمین اجتماعی و حوادث کارگاهی']
+    ],
+    faq: [
+      ['نظارت بر عملکرد گشت‌زن در نیمه‌شب چگونه تضمین می‌شود؟', 'کلیه مسیرها و فنس‌های شهرک تگ‌گذاری RFID می‌شوند؛ نگهبان موظف است طبق جدول زمان‌بندی نامنظم تگ‌ها را ثبت کند و گزارش دیجیتال روزانه به هیئت‌امنا ارسال می‌گردد.'],
+      ['آیا با تعویض هیئت‌امنای شهرک، خللی در خدمات پیش می‌آید؟', 'خیر؛ قراردادها به نام شخصیت حقوقی شهرک یا هیئت‌امنا منعقد شده و کلیه دستورالعمل‌های حفاظتی مکتوب و قابل انتقال به دوره بعدی است.'],
+      ['در زمان قطعی برق یا شرایط نامساعد جوی گشت‌زنی چگونه انجام می‌شود؟', 'نیروها مجهز به تجهیزات ضدآب، چراغ‌قوه‌های شارژی قوی و چراغ‌گردان گشت هستند و پایش محیطی متوقف نمی‌شود.']
+    ],
+    related: ['lobby-man-residential-towers', 'commercial-complex-security', 'construction-site-guarding']
   }
 ];
 
@@ -118,18 +176,37 @@ function render(p) {
       description: p.description,
       areaServed: ['تهران', 'البرز'],
       url: url(p.slug),
+      serviceType: 'حفاظت فیزیکی و تأمین نیروی حراست B2B',
       provider: {
-        '@type': 'LocalBusiness',
+        '@type': ['LocalBusiness', 'SecurityService', 'ProfessionalService'],
         name: `شرکت مراقبتی حفاظتی ${BRAND}`,
         url: `${SITE_URL}/`,
         telephone: '+982144289000',
         taxID: '14012107817',
-        identifier: '55356'
+        identifier: '55356',
+        image: `${SITE_URL}/assets/img/og-preview.svg`,
+        priceRange: '$$',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'پونک شمالی، بزرگراه شهید آیت‌الله اشرفی اصفهانی، خیابان شهید میرزا بابایی، مجتمع تجاری غدیر',
+          addressLocality: 'تهران',
+          addressRegion: 'تهران',
+          postalCode: '1476893841',
+          addressCountry: 'IR'
+        },
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: '4.9',
+          reviewCount: '48',
+          bestRating: '5',
+          worstRating: '1'
+        }
       }
     },
     {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
+      '@id': `${url(p.slug)}#breadcrumb`,
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'خانه', item: `${SITE_URL}/` },
         { '@type': 'ListItem', position: 2, name: p.short, item: url(p.slug) }
@@ -143,7 +220,7 @@ function render(p) {
   ];
 
   const hp = '<input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;width:0;height:0;opacity:0;pointer-events:none;overflow:hidden" />';
-  const related = p.related.map((s) => `<a href="../${s}/" class="block bg-white border border-slate-200 hover:border-cta-blue rounded-2xl p-4 font-bold text-navy text-sm transition">${esc(bySlug[s].short)} ←</a>`).join('');
+  const related = p.related.map((s) => (bySlug[s] ? `<a href="../${s}/" class="block bg-white border border-slate-200 hover:border-cta-blue rounded-2xl p-4 font-bold text-navy text-sm transition">${esc(bySlug[s].short)} ←</a>` : '')).join('');
 
   return `<!DOCTYPE html>
 <html lang="fa" dir="rtl">
@@ -154,12 +231,21 @@ function render(p) {
   <meta name="description" content="${esc(p.description)}" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#1B365D" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3L5 7.5V15.5C5 22.4 9.7 28.5 16 30C22.3 28.5 27 22.4 27 15.5V7.5L16 3Z' fill='%231B365D' stroke='%23C59B27' stroke-width='2'/%3E%3Cpath d='M11.5 16.5L14.5 19.5L21 13' stroke='%23C59B27' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
   <link rel="canonical" href="${url(p.slug)}" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="fa_IR" />
-  <meta property="og:title" content="${esc(p.title)}" />
+  <meta property="og:title" content="${esc(p.title)} | ${BRAND}" />
   <meta property="og:description" content="${esc(p.description)}" />
   <meta property="og:url" content="${url(p.slug)}" />
+  <meta property="og:image" content="${SITE_URL}/assets/img/og-preview.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="${esc(p.h1)} | ${BRAND}" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="${esc(p.title)} | ${BRAND}" />
+  <meta name="twitter:description" content="${esc(p.description)}" />
+  <meta name="twitter:image" content="${SITE_URL}/assets/img/og-preview.svg" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-Variable-font-face.css" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-Variable-font-face.css" /></noscript>
@@ -218,10 +304,10 @@ ${p.sla.map(([k, v]) => `            <div class="flex items-center justify-betwe
           <h2 class="text-xl font-black mt-1">درخواست بازدید فنی و پیش‌فاکتور رسمی</h2>
           <form data-lead-form data-source="service_${p.slug}" data-facility="${esc(p.facility)}" class="space-y-3 mt-4" novalidate>
             ${hp}
-            <div><label for="f-name" class="sr-only">نام و سمت</label><input id="f-name" name="name" type="text" required placeholder="نام و سمت شما (مثلاً مهندس رضایی - مدیر پروژه)" class="w-full px-4 py-3 rounded-xl bg-white text-navy text-sm focus:outline-none focus:ring-2 focus:ring-cta-gold" /></div>
-            <div><label for="f-mobile" class="sr-only">شماره موبایل</label><input id="f-mobile" name="mobile" type="tel" autocomplete="tel" dir="ltr" required placeholder="0912XXXXXXX" class="w-full px-4 py-3 rounded-xl bg-white text-navy font-bold text-sm text-left focus:outline-none focus:ring-2 focus:ring-cta-gold" /></div>
-            <div><label for="f-details" class="sr-only">محدوده و تعداد شیفت</label><textarea id="f-details" name="details" rows="2" placeholder="محدوده یا آدرس و تعداد شیفت درخواستی (اختیاری)" class="w-full px-4 py-3 rounded-xl bg-white text-navy text-sm focus:outline-none focus:ring-2 focus:ring-cta-gold"></textarea></div>
-            <button type="submit" class="w-full bg-cta-gold hover:bg-amber-500 text-navy-dark font-black text-base py-3.5 rounded-xl">ثبت درخواست بازدید رایگان</button>
+            <div><label for="f-name" class="sr-only">نام و سمت</label><input id="f-name" name="name" type="text" required placeholder="نام و سمت شما (مثلاً مهندس رضایی - مدیر پروژه)" class="w-full px-4 py-3 rounded-xl bg-white text-navy text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-cta-gold" /></div>
+            <div><label for="f-mobile" class="sr-only">شماره موبایل</label><input id="f-mobile" name="mobile" type="tel" autocomplete="tel" dir="ltr" required placeholder="0912XXXXXXX" class="w-full px-4 py-3 rounded-xl bg-white text-navy font-bold text-base sm:text-sm text-left focus:outline-none focus:ring-2 focus:ring-cta-gold" /></div>
+            <div><label for="f-details" class="sr-only">محدوده و تعداد شیفت</label><textarea id="f-details" name="details" rows="2" placeholder="محدوده یا آدرس و تعداد شیفت درخواستی (اختیاری)" class="w-full px-4 py-3 rounded-xl bg-white text-navy text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-cta-gold"></textarea></div>
+            <button type="submit" class="w-full bg-cta-gold hover:bg-amber-500 active:scale-95 text-navy-dark font-black text-base py-3.5 rounded-xl transition">ثبت درخواست بازدید رایگان</button>
             <p data-lead-status role="status" class="text-xs font-bold mt-2"></p>
           </form>
         </div>
@@ -250,9 +336,9 @@ ${p.faq.map(([q, a]) => `          <details class="bg-slatebg rounded-2xl border
     </div>
   </footer>
 
-  <div class="sm:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t border-slate-200 p-2.5 grid grid-cols-2 gap-2 shadow-2xl">
-    <a href="#request" class="bg-cta-blue text-white font-extrabold text-xs py-3 rounded-xl text-center">درخواست بازدید رایگان</a>
-    <a data-phone-link href="tel:02144289000" class="bg-navy text-white font-bold text-xs py-3 rounded-xl text-center">تماس مستقیم</a>
+  <div class="sm:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 p-2.5 safe-area-bottom grid grid-cols-2 gap-2 shadow-2xl">
+    <a href="#request" class="min-h-[44px] flex items-center justify-center bg-cta-blue active:scale-95 text-white font-extrabold text-xs py-2.5 rounded-xl text-center transition">درخواست بازدید رایگان</a>
+    <a data-phone-link href="tel:02144289000" class="min-h-[44px] flex items-center justify-center bg-navy active:scale-95 text-white font-bold text-xs py-2.5 rounded-xl text-center transition">تماس مستقیم</a>
   </div>
 
   <script src="../../config.js" defer></script>
@@ -287,10 +373,28 @@ for (const p of pages) {
   fs.writeFileSync(path.join(dir, 'index.html'), finalize(render(p)));
 }
 
-const urls = [`${SITE_URL}/`, ...pages.map((p) => url(p.slug))];
-fs.writeFileSync(
-  path.join(dist, 'sitemap.xml'),
-  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${u}</loc></url>`).join('\n')}\n</urlset>\n`
-);
-fs.writeFileSync(path.join(dist, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
+const nowIso = new Date().toISOString().split('T')[0];
+const sitemapEntries = [
+  { loc: `${SITE_URL}/`, priority: '1.0', changefreq: 'weekly' },
+  ...pages.map((p) => ({ loc: url(p.slug), priority: '0.8', changefreq: 'weekly' }))
+];
+const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitemapEntries.map((e) => `  <url>
+    <loc>${e.loc}</loc>
+    <lastmod>${nowIso}</lastmod>
+    <changefreq>${e.changefreq}</changefreq>
+    <priority>${e.priority}</priority>
+  </url>`).join('\n')}
+</urlset>
+`;
+const robotsTxt = `User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: ${SITE_URL}/sitemap.xml
+`;
+
+fs.writeFileSync(path.join(dist, 'sitemap.xml'), sitemapXml);
+fs.writeFileSync(path.join(dist, 'robots.txt'), robotsTxt);
 console.log(`✓ dist ساخته شد (${pages.length} صفحه خدمات) — SITE_URL=${SITE_URL}`);

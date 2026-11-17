@@ -3,7 +3,11 @@
   var cfg = window.SITE_CONFIG || {};
   // ریشهٔ سایت از مسیر همین اسکریپت (assets/js/lead.js) به دست می‌آید تا در صفحات تو در تو هم درست کار کند
   var siteRoot = location.href;
-  try { siteRoot = new URL('../../', document.currentScript.src).href; } catch (e) {}
+  try {
+    if (document.currentScript && document.currentScript.src) {
+      siteRoot = new URL('../../', document.currentScript.src).href;
+    }
+  } catch (e) {}
   window.dataLayer = window.dataLayer || [];
 
   function track(name, params) {

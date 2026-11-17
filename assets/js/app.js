@@ -49,36 +49,45 @@
         }, 4200);
       }
 
-      // ۲. منوی موبایل
+      // ۲. منوی موبایل با بستن هوشمند و پس‌زمینه محو
       var btnMobileMenu = document.getElementById('btn-mobile-menu');
       var mobileDrawer = document.getElementById('mobile-menu-drawer');
+      var mobileBackdrop = document.getElementById('mobile-menu-backdrop');
       var iconOpen = document.getElementById('icon-menu-open');
       var iconClose = document.getElementById('icon-menu-close');
+
+      function closeMobileMenu() {
+        if (!mobileDrawer) return;
+        mobileDrawer.classList.add('hidden');
+        if (mobileBackdrop) mobileBackdrop.classList.add('hidden');
+        if (iconOpen) iconOpen.classList.remove('hidden');
+        if (iconClose) iconClose.classList.add('hidden');
+        if (btnMobileMenu) btnMobileMenu.setAttribute('aria-expanded', 'false');
+      }
+
+      function openMobileMenu() {
+        if (!mobileDrawer) return;
+        mobileDrawer.classList.remove('hidden');
+        if (mobileBackdrop) mobileBackdrop.classList.remove('hidden');
+        if (iconOpen) iconOpen.classList.add('hidden');
+        if (iconClose) iconClose.classList.remove('hidden');
+        if (btnMobileMenu) btnMobileMenu.setAttribute('aria-expanded', 'true');
+      }
 
       if (btnMobileMenu && mobileDrawer) {
         btnMobileMenu.addEventListener('click', function () {
           var isHidden = mobileDrawer.classList.contains('hidden');
-          if (isHidden) {
-            mobileDrawer.classList.remove('hidden');
-            iconOpen.classList.add('hidden');
-            iconClose.classList.remove('hidden');
-            btnMobileMenu.setAttribute('aria-expanded', 'true');
-          } else {
-            mobileDrawer.classList.add('hidden');
-            iconOpen.classList.remove('hidden');
-            iconClose.classList.add('hidden');
-            btnMobileMenu.setAttribute('aria-expanded', 'false');
-          }
+          if (isHidden) openMobileMenu();
+          else closeMobileMenu();
         });
+
+        if (mobileBackdrop) {
+          mobileBackdrop.addEventListener('click', closeMobileMenu);
+        }
 
         var mobileLinks = document.querySelectorAll('.mobile-nav-link');
         mobileLinks.forEach(function (link) {
-          link.addEventListener('click', function () {
-            mobileDrawer.classList.add('hidden');
-            iconOpen.classList.remove('hidden');
-            iconClose.classList.add('hidden');
-            btnMobileMenu.setAttribute('aria-expanded', 'false');
-          });
+          link.addEventListener('click', closeMobileMenu);
         });
       }
 
@@ -119,9 +128,10 @@
         });
       });
 
-      // ۴. فیلتر جدول مقایسه نگهبان شخصی در برابر دیدبان امین توانا
+      // ۴. فیلتر جدول و کارت‌های مقایسه نگهبان شخصی در برابر دیدبان امین توانا
       var compFilterBtns = document.querySelectorAll('.comp-filter-btn');
       var compRows = document.querySelectorAll('#comparison-table-body tr');
+      var compCards = document.querySelectorAll('#comparison-mobile-cards [data-comp-cat]');
       compFilterBtns.forEach(function (btn) {
         btn.addEventListener('click', function () {
           var filter = btn.getAttribute('data-comp-filter');
@@ -130,14 +140,17 @@
           });
           btn.className = 'comp-filter-btn bg-navy text-white text-xs sm:text-sm font-bold px-4 py-2 rounded-xl transition';
 
-          compRows.forEach(function (row) {
-            var cat = row.getAttribute('data-comp-cat');
+          var filterItem = function (el) {
+            var cat = el.getAttribute('data-comp-cat');
             if (filter === 'all' || cat === filter) {
-              row.classList.remove('hidden');
+              el.classList.remove('hidden');
             } else {
-              row.classList.add('hidden');
+              el.classList.add('hidden');
             }
-          });
+          };
+
+          compRows.forEach(filterItem);
+          compCards.forEach(filterItem);
         });
       });
 
@@ -356,6 +369,12 @@
         if (recLabel) {
           recLabel.textContent = 'متقاضی: ' + (userName ? userName : 'کارفرمای محترم') + (userPhone ? ' (' + toPersianDigits(userPhone) + ')' : '');
         }
+        var priceDisplay = calc.totalFormatted;
+        if (!userPhone && !state.estimatorGated) {
+          var rangeEl = document.getElementById('est-price-range');
+          var rangeText = rangeEl ? rangeEl.textContent.trim() : 'بازه اولیه';
+          priceDisplay = rangeText + ' (جهت مشاهده رقم قطعی، شماره تماس خود را در برآوردگر ثبت فرمایید)';
+        }
         if (detailsBox) {
           detailsBox.innerHTML =
             '<div class="bg-white p-3 rounded-xl border border-slate-200"><span class="text-slate-500 block text-xs">نوع مکان و پوشش:</span><strong class="text-navy">' +
@@ -363,7 +382,7 @@
             '<div class="bg-white p-3 rounded-xl border border-slate-200"><span class="text-slate-500 block text-xs">تعداد پست و نفرات:</span><strong class="text-navy">' +
             toPersianDigits(calc.shifts) + ' پست همزمان (' + calc.headcount + ')</strong></div>' +
             '<div class="bg-white p-3 rounded-xl border border-slate-200"><span class="text-slate-500 block text-xs">برآورد پایه ماهانه (۱۴۰۵):</span><strong class="text-emerald-700">' +
-            calc.totalFormatted + '</strong></div>';
+            priceDisplay + '</strong></div>';
         }
         if (checklistModal) checklistModal.classList.remove('hidden');
         return calc;
@@ -375,6 +394,7 @@
           var nameInput = document.getElementById('lead-name');
           var phoneInput = document.getElementById('lead-phone');
           var errEl = document.getElementById('lead-phone-error');
+          var submitBtn = leadForm.querySelector('button[type="submit"]');
           var hp = leadForm.querySelector('[name="website"]');
           var rawPhone = phoneInput ? phoneInput.value.trim() : '';
           if (!D.isValidMobile(rawPhone)) {
@@ -382,26 +402,43 @@
             return;
           }
           if (errEl) errEl.classList.add('hidden');
-          state.estimatorGated = true;
-          state.hasConverted = true;
-          var teaser = document.getElementById('est-price-teaser');
-          var exact = document.getElementById('est-price-exact');
-          if (teaser) teaser.classList.add('hidden');
-          if (exact) exact.classList.remove('hidden');
           var name = nameInput ? nameInput.value.trim() : '';
-          var calc = openChecklistWithQuote(name, D.normalizeDigits(rawPhone));
-          D.track('generate_lead_estimator', { place: state.estimator.place, posts: calc.shifts, hours: calc.hours });
+          var origBtnHtml = submitBtn ? submitBtn.innerHTML : '';
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span>در حال صدور پیش‌فاکتور...</span>';
+          }
+          var normPhone = D.normalizeMobile ? D.normalizeMobile(rawPhone) : D.normalizeDigits(rawPhone);
+          var calc = updateEstimatorUI();
           D.submitLead({
             source: 'estimator',
             name: name,
-            mobile: D.normalizeDigits(rawPhone),
+            mobile: normPhone,
             facility: calc.placeLabel,
             estimate: calc.shifts + ' پست ' + calc.hours + ' ساعته - ' + calc.totalFormatted,
             website: hp ? hp.value : ''
           }).then(function (ok) {
-            showToast(ok
-              ? 'پیش‌فاکتور و چک‌لیست آماده است و درخواست شما برای کارشناسان ما ثبت شد.'
-              : 'پیش‌فاکتور و چک‌لیست آماده است. ثبت شماره شما انجام نشد؛ لطفاً با ' + D.cfg.phoneDisplay + ' تماس بگیرید.');
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = origBtnHtml;
+            }
+            if (ok) {
+              state.estimatorGated = true;
+              state.hasConverted = true;
+              var teaser = document.getElementById('est-price-teaser');
+              var exact = document.getElementById('est-price-exact');
+              if (teaser) teaser.classList.add('hidden');
+              if (exact) exact.classList.remove('hidden');
+              openChecklistWithQuote(name, normPhone);
+              D.track('generate_lead_estimator', { place: state.estimator.place, posts: calc.shifts, hours: calc.hours });
+              showToast('پیش‌فاکتور و چک‌لیست آماده است و درخواست شما برای کارشناسان ما ثبت شد.');
+            } else {
+              if (errEl) {
+                errEl.textContent = 'ثبت درخواست با خطا مواجه شد؛ لطفاً با شماره ' + D.cfg.phoneDisplay + ' تماس حاصل فرمایید.';
+                errEl.classList.remove('hidden');
+              }
+              showToast('ثبت شماره انجام نشد؛ لطفاً با شماره ' + D.cfg.phoneDisplay + ' تماس بگیرید.');
+            }
           });
         });
       }
@@ -644,25 +681,57 @@
             return;
           }
           if (errEl) errEl.classList.add('hidden');
-          state.hasConverted = true;
           var submitBtn = exitForm.querySelector('button[type="submit"]');
           var origLabel = submitBtn ? submitBtn.textContent : '';
           if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'در حال ارسال...'; }
-          if (D && D.track) D.track('exit_intent_lead', {});
+          var normPhone = D.normalizeMobile ? D.normalizeMobile(rawPhone) : D.normalizeDigits(rawPhone);
           D.submitLead({
             source: 'exit_intent_checklist',
             name: nameInput ? nameInput.value.trim() : '',
-            mobile: D.normalizeDigits(rawPhone),
+            mobile: normPhone,
             website: hp ? hp.value : ''
           }).then(function (ok) {
             if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = origLabel; }
-            if (exitModal) exitModal.classList.add('hidden');
-            showToast(ok
-              ? 'چک‌لیست حقوقی برای شما ارسال شد. کارشناسان ما تا ۱۵ دقیقه دیگر تماس می‌گیرند.'
-              : 'ثبت شماره با خطا مواجه شد؛ لطفاً با ' + D.cfg.phoneDisplay + ' تماس بگیرید.');
+            if (ok) {
+              state.hasConverted = true;
+              if (D && D.track) D.track('exit_intent_lead', {});
+              if (exitModal) exitModal.classList.add('hidden');
+              showToast('چک‌لیست حقوقی برای شما ارسال شد. کارشناسان ما تا ۱۵ دقیقه دیگر تماس می‌گیرند.');
+              exitForm.reset();
+            } else {
+              if (errEl) {
+                errEl.textContent = 'ثبت شماره با خطا مواجه شد؛ لطفاً با شماره ' + D.cfg.phoneDisplay + ' تماس بگیرید.';
+                errEl.classList.remove('hidden');
+              }
+              showToast('ثبت شماره با خطا مواجه شد؛ لطفاً با ' + D.cfg.phoneDisplay + ' تماس بگیرید.');
+            }
           });
         });
       }
+
+      // ۱۳. تجربه لمسی موبایل: بستن مودال‌ها با تپ روی پس‌زمینه (Backdrop Click) یا کلید Escape
+      var allModals = [checklistModal, visitModal, licenseModal, exitModal];
+      allModals.forEach(function (m) {
+        if (!m) return;
+        m.addEventListener('click', function (e) {
+          if (e.target === m) {
+            m.classList.add('hidden');
+          }
+        });
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          allModals.forEach(function (m) {
+            if (m && !m.classList.contains('hidden')) {
+              m.classList.add('hidden');
+            }
+          });
+          if (typeof closeMobileMenu === 'function') {
+            closeMobileMenu();
+          }
+        }
+      });
 
       // مقداردهی اولیه
       try {
