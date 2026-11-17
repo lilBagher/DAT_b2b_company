@@ -16,7 +16,14 @@
     return String(s || '').replace(/[۰-۹]/g, function (d) { return '۰۱۲۳۴۵۶۷۸۹'.indexOf(d); })
       .replace(/[٠-٩]/g, function (d) { return '٠١٢٣٤٥٦٧٨٩'.indexOf(d); });
   }
-  function isValidMobile(raw) { return /^09\d{9}$/.test(normalizeDigits(raw).replace(/\s|-/g, '')); }
+  function normalizeMobile(raw) {
+    var n = normalizeDigits(raw).replace(/\D/g, '');
+    if (/^0098\d{10}$/.test(n)) n = n.slice(4);
+    else if (/^98\d{10}$/.test(n)) n = n.slice(2);
+    if (/^9\d{9}$/.test(n)) n = '0' + n;
+    return n;
+  }
+  function isValidMobile(raw) { return /^09\d{9}$/.test(normalizeMobile(raw)); }
 
   function waNumber() {
     var n = normalizeDigits(cfg.whatsapp || '').replace(/\D/g, '');
@@ -66,26 +73,51 @@
     ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(function (k) {
       if (p.get(k)) out[k] = p.get(k);
     });
+    try {
+      if (Object.keys(out).length) sessionStorage.setItem('dideban_utm', JSON.stringify(out));
+      else out = JSON.parse(sessionStorage.getItem('dideban_utm') || '{}') || {};
+    } catch (e) {}
     return out;
+  }
+  utm();
+
+  var inFlight = {};
+  function leadAccepted(r) {
+    if (!r.ok) return false;
+    return r.text().then(function (t) {
+      if (/<\?php|(Fatal|Parse) error/i.test(t)) return false;
+      var m = t.match(/\{[^{}]*\}\s*$/);
+      if (m) { try { if (JSON.parse(m[0]).ok === false) return false; } catch (e) {} }
+      return true;
+    });
   }
 
   // ارسال لید؛ در صورت موفقیت true برمی‌گرداند
   function submitLead(payload) {
     var body = { page: location.pathname, referrer: document.referrer || '', utm: utm() };
     for (var k in payload) body[k] = payload[k];
+    if (isValidMobile(body.mobile)) body.mobile = normalizeMobile(body.mobile);
     if (!cfg.leadEndpoint) return Promise.resolve(false);
     var endpoint;
     try { endpoint = new URL(cfg.leadEndpoint, siteRoot).href; } catch (e) { return Promise.resolve(false); }
+    var key = (body.source || '') + '|' + (body.mobile || '');
+    if (inFlight[key]) return inFlight[key];
     var ctrl = typeof AbortController !== 'undefined' ? new AbortController() : null;
     var timer = ctrl ? setTimeout(function () { ctrl.abort(); }, 9000) : null;
-    return fetch(endpoint, {
+    inFlight[key] = fetch(endpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body),
       signal: ctrl ? ctrl.signal : undefined
-    }).then(function (r) { return r.ok; })
+    }).then(leadAccepted)
       .catch(function () { return false; })
-      .then(function (ok) { if (timer) clearTimeout(timer); return ok; });
+      .then(function (ok) {
+        if (timer) clearTimeout(timer);
+        delete inFlight[key];
+        if (!ok) track('lead_submit_failed', { lead_source: body.source || '' });
+        return ok;
+      });
+    return inFlight[key];
   }
 
   // فرم‌های درون‌صفحه‌ای (صفحات خدمات): <form data-lead-form data-source="...">
@@ -125,6 +157,7 @@
     track: track,
     submitLead: submitLead,
     isValidMobile: isValidMobile,
+    normalizeMobile: normalizeMobile,
     normalizeDigits: normalizeDigits,
     waLink: waLink,
     hasWhatsapp: function () { return !!waNumber(); },

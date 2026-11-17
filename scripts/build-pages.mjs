@@ -6,9 +6,11 @@ import path from 'node:path';
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const dist = path.join(root, 'dist');
 const SITE_URL = (process.env.SITE_URL || 'https://YOUR-DOMAIN.ir').replace(/\/$/, '');
-if (SITE_URL.includes('YOUR-DOMAIN')) {
-  console.warn('\n⚠️  SITE_URL تنظیم نشده؛ آدرس کنونیکال/sitemap نمونه است. با SITE_URL=https://دامنه-شما.ir دوباره بیلد کنید.\n');
+const PLACEHOLDER_URL = SITE_URL.includes('YOUR-DOMAIN');
+if (PLACEHOLDER_URL) {
+  console.warn('\n⚠️  SITE_URL تنظیم نشده؛ sitemap نمونه است و تگ‌های canonical و og:url از این بیلد حذف شدند. این خروجی را منتشر نکنید؛ با SITE_URL=https://دامنه-شما.ir دوباره بیلد کنید.\n');
 }
+const finalize = (html) => (PLACEHOLDER_URL ? html.replace(/^[ \t]*<(link rel="canonical"|meta property="og:url")[^>]*>\n/gm, '') : html);
 
 const BRAND = 'دیدبان امین توانا';
 const LICENSE = 'دارای مجوز رسمی از مرکز انتظام فراجا (تحت ماده ۱۲۲)';
@@ -159,7 +161,8 @@ function render(p) {
   <meta property="og:description" content="${esc(p.description)}" />
   <meta property="og:url" content="${url(p.slug)}" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-Variable-font-face.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-Variable-font-face.css" /></noscript>
   <link rel="stylesheet" href="../../assets/css/tailwind.css" />
   <link rel="stylesheet" href="../../assets/css/styles.css" />
 ${jsonld.map((o) => `  <script type="application/ld+json">${JSON.stringify(o)}</script>`).join('\n')}
@@ -216,7 +219,7 @@ ${p.sla.map(([k, v]) => `            <div class="flex items-center justify-betwe
           <form data-lead-form data-source="service_${p.slug}" data-facility="${esc(p.facility)}" class="space-y-3 mt-4" novalidate>
             ${hp}
             <div><label for="f-name" class="sr-only">نام و سمت</label><input id="f-name" name="name" type="text" required placeholder="نام و سمت شما (مثلاً مهندس رضایی - مدیر پروژه)" class="w-full px-4 py-3 rounded-xl bg-white text-navy text-sm focus:outline-none focus:ring-2 focus:ring-cta-gold" /></div>
-            <div><label for="f-mobile" class="sr-only">شماره موبایل</label><input id="f-mobile" name="mobile" type="tel" dir="ltr" required placeholder="0912XXXXXXX" class="w-full px-4 py-3 rounded-xl bg-white text-navy font-bold text-sm text-left focus:outline-none focus:ring-2 focus:ring-cta-gold" /></div>
+            <div><label for="f-mobile" class="sr-only">شماره موبایل</label><input id="f-mobile" name="mobile" type="tel" autocomplete="tel" dir="ltr" required placeholder="0912XXXXXXX" class="w-full px-4 py-3 rounded-xl bg-white text-navy font-bold text-sm text-left focus:outline-none focus:ring-2 focus:ring-cta-gold" /></div>
             <div><label for="f-details" class="sr-only">محدوده و تعداد شیفت</label><textarea id="f-details" name="details" rows="2" placeholder="محدوده یا آدرس و تعداد شیفت درخواستی (اختیاری)" class="w-full px-4 py-3 rounded-xl bg-white text-navy text-sm focus:outline-none focus:ring-2 focus:ring-cta-gold"></textarea></div>
             <button type="submit" class="w-full bg-cta-gold hover:bg-amber-500 text-navy-dark font-black text-base py-3.5 rounded-xl">ثبت درخواست بازدید رایگان</button>
             <p data-lead-status role="status" class="text-xs font-bold mt-2"></p>
@@ -269,7 +272,7 @@ const copy = (src, dst) => {
     fs.mkdirSync(dst, { recursive: true });
     for (const f of fs.readdirSync(src)) copy(path.join(src, f), path.join(dst, f));
   } else if (/\.(html|js|php|xml|txt)$/.test(src) && !/lead\.php$/.test(src)) {
-    fs.writeFileSync(dst, fs.readFileSync(src, 'utf8').replaceAll('__SITE_URL__', SITE_URL));
+    fs.writeFileSync(dst, finalize(fs.readFileSync(src, 'utf8').replaceAll('__SITE_URL__', SITE_URL)));
   } else {
     fs.copyFileSync(src, dst);
   }
@@ -281,7 +284,7 @@ fs.copyFileSync(path.join(root, 'api/.htaccess'), path.join(dist, 'api/.htaccess
 for (const p of pages) {
   const dir = path.join(dist, 'services', p.slug);
   fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(path.join(dir, 'index.html'), render(p));
+  fs.writeFileSync(path.join(dir, 'index.html'), finalize(render(p)));
 }
 
 const urls = [`${SITE_URL}/`, ...pages.map((p) => url(p.slug))];
