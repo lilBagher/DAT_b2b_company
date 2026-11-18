@@ -49,11 +49,11 @@
     "@id": "__SITE_URL__/#organization",
     "name": "شرکت مراقبتی حفاظتی دیدبان امین توانا",
     "alternateName": "مؤسسه غیرتجاری دیدبان امین توانا - Amin Watchful Power",
-    "description": "دارای مجوز رسمی از مرکز انتظام فراجا (تحت ماده ۱۲۲). تأمین نیروی نگهبان، لابی‌من، حراست فیزیکی برج‌های مسکونی، کارخانه‌ها، مراکز تجاری و پروژه‌های ساختمانی با پوشش کامل بیمه و مسئولیت قانونی.",
+    "description": "دارای مجوز رسمی از مرکز انتظام فراجا (تحت ماده ۱۲۲) با هیئت‌مدیره فرماندهان بازنشسته انتظامی و ارتش، پشتوانه وکیل پایه یک دادگستری و آکادمی آموزش مجوزدار. تأمین نیروی نگهبان، لابی‌من، حراست فیزیکی برج‌های مسکونی، کارخانه‌ها، مراکز تجاری و پروژه‌های ساختمانی با پوشش کامل بیمه و مسئولیت قانونی.",
     "url": "__SITE_URL__/",
     "logo": "__SITE_URL__/assets/img/logo.svg",
-    "image": "__SITE_URL__/assets/img/og-preview.svg",
-    "areaServed": ["تهران", "البرز"],
+    "image": "__SITE_URL__/assets/img/photos/hero-security-officer-dideban.webp",
+    "areaServed": ["تهران", "البرز", "حومه تهران", "شهرک صنعتی شمس‌آباد", "شهرک صنعتی سیمین‌دشت", "شهرک صنعتی چهاردانگه", "شهرک صنعتی عباس‌آباد", "سعادت‌آباد", "شهرک غرب", "نیاوران", "منطقه ۲۲ تهران"],
     "taxID": "14012107817",
     "identifier": "55356",
     "telephone": "+982144289000",
@@ -74,6 +74,9 @@
       "longitude": 51.3333
     },
     "hasMap": "https://maps.google.com/?q=35.7667,51.3333",
+    "sameAs": [
+      "https://rasmio.com/company/14012107817/%D8%AF%DB%8C%D8%AF%D8%A8%D8%A7%D9%86%20%D8%A7%D9%85%DB%8C%D9%86%20%D8%AA%D9%88%D8%A7%D9%86%D8%A7/"
+    ],
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": [
@@ -133,6 +136,11 @@
           "@type": "OfferCatalog",
           "name": "حفاظت و نگهبانی شهرک‌های مسکونی و ویلایی",
           "url": "__SITE_URL__/services/residential-compound-security/"
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "حفاظت فیزیکی سازمان‌ها، بیمارستان‌ها، نمایشگاه‌ها و همایش‌ها",
+          "url": "__SITE_URL__/services/armed-escort-event-security/"
         }
       ]
     }
@@ -247,15 +255,19 @@
         </a>
 
         <!-- لینک‌های ناوبری دسکتاپ -->
-        <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-slate-700" aria-label="منوی اصلی">
+        <nav class="hidden lg:flex items-center gap-5 text-sm font-semibold text-slate-700" aria-label="منوی اصلی">
+          <a href="#reputation-moat" class="hover:text-cta-blue transition py-2">کارنامه و هیئت‌مدیره</a>
           <a href="#services" class="hover:text-cta-blue transition py-2">خدمات تخصصی</a>
-          <a href="#legal-comparison" class="hover:text-cta-blue transition py-2">مزایای قانونی</a>
           <a href="#shift-estimator" class="hover:text-cta-blue transition py-2 flex items-center gap-1">
             <span>برآوردگر شیفت</span>
             <span class="bg-blue-100 text-cta-blue text-[10px] px-1.5 py-0.5 rounded font-bold">۱۴۰۵</span>
           </a>
-          <a href="#process" class="hover:text-cta-blue transition py-2">فرآیند همکاری</a>
-          <a href="#social-proof" class="hover:text-cta-blue transition py-2">اعتبارسنجی</a>
+          <a href="resume/" class="hover:text-cta-blue transition py-2">رزومه رسمی PDF</a>
+          <a href="knowledge/" class="hover:text-cta-blue transition py-2">پایگاه دانش</a>
+          <a href="partners/" class="hover:text-cta-blue transition py-2 flex items-center gap-1">
+            <span>همکاری تجاری</span>
+            <span class="bg-amber-100 text-amber-900 text-[10px] px-1.5 py-0.5 rounded font-bold">پورسانت</span>
+          </a>
           <a href="#faq" class="hover:text-cta-blue transition py-2">سوالات متداول</a>
         </nav>
 
@@ -266,7 +278,7 @@
             <span data-phone-text id="nav-phone-text" class="text-sm font-extrabold text-navy dir-ltr" dir="ltr">۰۲۱-۴۴۲۸۹۰۰۰</span>
           </a>
           <button type="button" data-open-visit-modal="true" class="bg-cta-blue hover:bg-cta-blueHover text-white font-bold text-sm px-5 py-3 rounded-xl shadow-md hover:shadow-lg transition flex items-center gap-2">
-            <span>درخواست بازدید رایگان</span>
+            <span>ممیزی رایگان نقاط کور</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
           </button>
         </div>
@@ -285,19 +297,21 @@
     </div>
 
     <!-- پس‌زمینه محو هنگام باز بودن منوی موبایل -->
-    <div id="mobile-menu-backdrop" class="hidden fixed inset-0 top-16 sm:top-20 bg-slate-900/50 backdrop-blur-xs z-30 lg:hidden"></div>
+    <div id="mobile-menu-backdrop" class="hidden fixed inset-0 top-16 sm:top-20 bg-slate-900/50 backdrop-blur-sm z-30 lg:hidden"></div>
 
     <!-- منوی کشویی موبایل -->
     <div id="mobile-menu-drawer" class="hidden lg:hidden relative z-40 bg-white border-t border-slate-200 px-4 pt-3 pb-6 space-y-2.5 shadow-2xl max-h-[calc(100vh-4rem)] overflow-y-auto">
+      <a href="#reputation-moat" class="mobile-nav-link min-h-[44px] flex items-center px-3.5 py-2.5 rounded-xl text-sm font-bold text-slate-800 hover:bg-slate-100 active:bg-slate-200 transition">کارنامه اجرایی و هیئت‌مدیره فرماندهان</a>
       <a href="#services" class="mobile-nav-link min-h-[44px] flex items-center px-3.5 py-2.5 rounded-xl text-sm font-bold text-slate-800 hover:bg-slate-100 active:bg-slate-200 transition">خدمات تخصصی (برج، کارخانه، کارگاه)</a>
       <a href="#legal-comparison" class="mobile-nav-link min-h-[44px] flex items-center px-3.5 py-2.5 rounded-xl text-sm font-bold text-slate-800 hover:bg-slate-100 active:bg-slate-200 transition">مزایای قانونی و مقایسه ریسک</a>
       <a href="#shift-estimator" class="mobile-nav-link min-h-[44px] flex items-center px-3.5 py-2.5 rounded-xl text-sm font-bold text-slate-800 hover:bg-slate-100 active:bg-slate-200 transition">برآوردگر شیفت و نرخ ۱۴۰۵</a>
-      <a href="#process" class="mobile-nav-link min-h-[44px] flex items-center px-3.5 py-2.5 rounded-xl text-sm font-bold text-slate-800 hover:bg-slate-100 active:bg-slate-200 transition">فرآیند شروع همکاری</a>
-      <a href="#social-proof" class="mobile-nav-link min-h-[44px] flex items-center px-3.5 py-2.5 rounded-xl text-sm font-bold text-slate-800 hover:bg-slate-100 active:bg-slate-200 transition">مجوزها و نظرات کارفرمایان</a>
+      <a href="resume/" class="mobile-nav-link min-h-[44px] flex items-center px-3.5 py-2.5 rounded-xl text-sm font-bold text-navy bg-slate-50 hover:bg-slate-100 transition">📄 رزومه رسمی و نسخه PDF مؤسسه</a>
+      <a href="knowledge/" class="mobile-nav-link min-h-[44px] flex items-center px-3.5 py-2.5 rounded-xl text-sm font-bold text-navy bg-blue-50 hover:bg-blue-100 transition">📚 پایگاه دانش حقوقی، قانون کار ۱۴۰۵ و نمونه قرارداد</a>
+      <a href="partners/" class="mobile-nav-link min-h-[44px] flex items-center px-3.5 py-2.5 rounded-xl text-sm font-bold text-amber-900 bg-amber-50 hover:bg-amber-100 transition">🤝 همکاری تجاری و نمایندگی معرفی (پورسانت)</a>
       <a href="#faq" class="mobile-nav-link min-h-[44px] flex items-center px-3.5 py-2.5 rounded-xl text-sm font-bold text-slate-800 hover:bg-slate-100 active:bg-slate-200 transition">سوالات متداول</a>
       <div class="pt-2 flex flex-col gap-2">
         <button type="button" data-open-visit-modal="true" class="w-full min-h-[48px] bg-cta-blue active:bg-cta-blueHover text-white font-extrabold text-sm py-3.5 rounded-xl shadow-md transition">
-          درخواست بازدید فنی رایگان
+          درخواست بازدید فنی و ممیزی رایگان
         </button>
       </div>
     </div>
@@ -316,119 +330,144 @@
             </div>
 
             <h1 class="text-2xl sm:text-4xl lg:text-[40px] font-black leading-[1.35] tracking-tight text-white">
-              تأمین نیروی نگهبان، لابی‌من و حراست فیزیکی با مجوز ماده ۱۲۲ فراجا
-              <span class="block text-xl sm:text-2xl lg:text-3xl text-cta-gold mt-2 font-bold">حذف ۱۰۰٪ ریسک شکایت سنوات، دیه ماده ۶۶ و مسئولیت کارفرمایی</span>
+              ریسک شکایت سنوات، دیه ماده ۶۶ و سرقت شبانه را از مجموعه خود حذف کنید
+              <span class="block text-xl sm:text-2xl lg:text-3xl text-cta-gold mt-2 font-black">— ما مسئولیت کامل می‌پذیریم</span>
             </h1>
 
             <p class="text-base sm:text-lg text-slate-200 leading-relaxed max-w-2xl font-normal">
-              مؤسسه دیدبان امین توانا (مجوز رسمی ماده ۱۲۲ فراجا)؛ تأمین نگهبان و لابی‌من با
-              <strong class="text-white">سلب کامل رابطه کارگری از کارفرما</strong>،
-              پوشش ۱۰۰٪ بیمه از روز اول و تعهد کتبی جایگزینی زیر ۴ ساعت.
+              مؤسسه مراقبتی حفاظتی دیدبان امین توانا (مجوز رسمی ماده ۱۲۲ فراجا) با هیئت‌مدیره <strong class="text-white">فرماندهان ارشد بازنشسته فراجا و ارتش</strong> و پشتوانه <strong class="text-white">وکیل پایه یک دادگستری</strong>؛ تأمین نگهبان و لابی‌من با <strong class="text-white">سلب کامل رابطه کارگری از کارفرما</strong>، پوشش ۱۰۰٪ بیمه از روز اول و تعهد کتبی جایگزینی زیر ۴ ساعت.
             </p>
 
             <!-- انتخاب سریع نقش مخاطب برای شخصی‌سازی پیام -->
             <div class="bg-white/5 border border-white/10 rounded-2xl p-3.5">
-              <div class="text-xs text-slate-300 mb-2 font-medium">حوزه مسئولیت خود را برای مشاهده راهکار اختصاصی انتخاب کنید:</div>
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                <div class="text-xs text-slate-300 font-medium">حوزه مسئولیت خود را برای شخصی‌سازی خدمات و برآوردگر انتخاب کنید:</div>
+                <span id="persona-sync-badge" class="hidden text-[11px] font-bold text-emerald-300 bg-emerald-950/60 border border-emerald-500/30 px-2.5 py-0.5 rounded-full"></span>
+              </div>
               <div class="flex flex-wrap gap-2" role="group" aria-label="انتخاب نقش کارفرما">
-                <button type="button" data-persona="tower" class="persona-chip bg-cta-gold text-navy-dark font-bold text-xs px-3 py-1.5 rounded-lg transition">
+                <button type="button" data-persona="tower" aria-pressed="true" class="persona-chip bg-cta-gold text-navy-dark font-bold text-xs px-3 py-1.5 rounded-lg transition">
                   🏢 مدیر برج و مجتمع مسکونی
                 </button>
-                <button type="button" data-persona="factory" class="persona-chip bg-white/10 hover:bg-white/20 text-white font-medium text-xs px-3 py-1.5 rounded-lg transition">
+                <button type="button" data-persona="factory" aria-pressed="false" class="persona-chip bg-white/10 hover:bg-white/20 text-white font-medium text-xs px-3 py-1.5 rounded-lg transition">
                   🏭 مدیر کارخانه و شهرک صنعتی
                 </button>
-                <button type="button" data-persona="hr" class="persona-chip bg-white/10 hover:bg-white/20 text-white font-medium text-xs px-3 py-1.5 rounded-lg transition">
+                <button type="button" data-persona="hr" aria-pressed="false" class="persona-chip bg-white/10 hover:bg-white/20 text-white font-medium text-xs px-3 py-1.5 rounded-lg transition">
                   ⚖️ مدیر منابع انسانی / حراست
                 </button>
-                <button type="button" data-persona="construction" class="persona-chip bg-white/10 hover:bg-white/20 text-white font-medium text-xs px-3 py-1.5 rounded-lg transition">
+                <button type="button" data-persona="construction" aria-pressed="false" class="persona-chip bg-white/10 hover:bg-white/20 text-white font-medium text-xs px-3 py-1.5 rounded-lg transition">
                   🏗️ سازنده و مدیر پروژه عمرانی
                 </button>
               </div>
               <p id="persona-dynamic-tip" class="mt-2.5 text-xs sm:text-sm text-amber-200 bg-navy-dark/50 rounded-xl px-3 py-2 border-r-2 border-cta-gold">
-                ویژه مدیران برج‌ها: تأمین لابی‌من ۲۴ ساعته با لباس فرم تشریفاتی، بدون ایجاد حق سکونت در مشاعات و حذف کامل شکایات سنوات از هیئت‌مدیره.
+                ویژه مدیران برج‌ها: تأمین لابی‌من ۲۴ ساعته با لباس فرم تشریفاتی تحت نظارت سرهنگ ملکوتی‌خواه (دارای مدرک مدیریت هتل و تشریفات)، بدون ایجاد حق سکونت در مشاعات و حذف کامل شکایات سنوات از هیئت‌مدیره.
               </p>
+              <div class="mt-2 flex flex-wrap items-center justify-between gap-2 text-xs">
+                <a id="persona-action-link" href="services/lobby-man-residential-towers/" class="inline-flex items-center gap-1 text-white hover:text-cta-gold font-bold underline decoration-dotted underline-offset-4 transition">
+                  مشاهده راهکار لابی‌من تشریفاتی و درخواست نمونه لباس فرم ←
+                </a>
+                <button type="button" id="persona-scroll-btn" class="inline-flex items-center gap-1 text-amber-300 hover:text-white font-bold transition">
+                  <span>مشاهده خدمات و برآوردگر مخصوص شما ↓</span>
+                </button>
+              </div>
             </div>
 
-            <!-- دو دکمه اقدام اصلی و ثانویه -->
+            <!-- دو دکمه اقدام اصلی و ثانویه (پیشنهاد طلایی Trojan Horse) -->
             <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
-              <button type="button" data-open-visit-modal="true" class="bg-cta-blue hover:bg-cta-blueHover text-white font-extrabold text-base px-7 py-4 rounded-xl shadow-lg shadow-blue-600/30 transition flex items-center justify-center gap-2.5">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+              <button type="button" data-open-visit-modal="true" class="bg-cta-blue hover:bg-cta-blueHover text-white font-extrabold text-sm sm:text-base px-6 py-4 rounded-xl shadow-lg shadow-blue-600/30 transition flex items-center justify-center gap-2.5">
+                <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                 <span>درخواست بازدید فنی و ممیزی رایگان نقاط کور</span>
               </button>
 
-              <a id="hero-whatsapp-btn" data-wa="سلام، مدیر مجموعه هستم و جهت هماهنگی بازدید فنی رایگان و استعلام نرخ ۱۴۰۵ پیام می‌دهم." href="#" target="_blank" rel="noopener noreferrer" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-base px-6 py-4 rounded-xl shadow-lg transition flex items-center justify-center gap-2.5">
+              <a id="hero-whatsapp-btn" data-wa="سلام، مدیر مجموعه هستم و جهت هماهنگی بازدید فنی رایگان توسط کارشناس ارشد و استعلام نرخ ۱۴۰۵ پیام می‌دهم." href="#" target="_blank" rel="noopener noreferrer" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-base px-6 py-4 rounded-xl shadow-lg transition flex items-center justify-center gap-2.5">
                 <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.625.846 5.059 2.284 7.033l-1.492 5.447 5.601-1.469c1.912 1.044 4.101 1.639 6.431 1.639 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
                 <span>مشاوره فوری واتساپ <span class="text-emerald-200 text-xs">(پاسخ زیر ۱۵ دقیقه)</span></span>
               </a>
+
+              <a href="resume/" class="bg-white/10 hover:bg-white/20 border border-white/25 text-white font-bold text-sm px-5 py-4 rounded-xl transition flex items-center justify-center gap-2">
+                <span>📄 رزومه رسمی PDF</span>
+              </a>
             </div>
 
-            <!-- نوار اعتماد زیر تیتر (۴ نشان کلیدی) -->
+            <!-- نوار اعتماد زیر تیتر (۴ نشان کلیدی اهرم اعتبار) -->
             <div class="pt-4 grid grid-cols-2 sm:grid-cols-4 gap-3">
               <div class="bg-white/10 backdrop-blur-sm border border-white/15 rounded-xl p-3">
-                <div class="text-cta-gold font-black text-base sm:text-lg">ماده ۱۲۲ فراجا</div>
-                <div class="text-xs text-slate-200 mt-0.5">مجوز رسمی مرکز انتظام</div>
+                <div class="text-cta-gold font-black text-base sm:text-lg">فرماندهان ارشد</div>
+                <div class="text-xs text-slate-200 mt-0.5">هیئت‌مدیره فراجا و ارتش</div>
+              </div>
+              <div class="bg-white/10 backdrop-blur-sm border border-white/15 rounded-xl p-3">
+                <div class="text-cta-gold font-black text-base sm:text-lg">وکیل پایه یک</div>
+                <div class="text-xs text-slate-200 mt-0.5">پشتوانه قضایی ماده ۶۶</div>
               </div>
               <div class="bg-white/10 backdrop-blur-sm border border-white/15 rounded-xl p-3">
                 <div class="text-cta-gold font-black text-base sm:text-lg">&lt; ۴ ساعت</div>
                 <div class="text-xs text-slate-200 mt-0.5">جایگزینی فوری نیروی غایب</div>
               </div>
               <div class="bg-white/10 backdrop-blur-sm border border-white/15 rounded-xl p-3">
-                <div class="text-cta-gold font-black text-base sm:text-lg">۱۰۰٪ پوشش</div>
-                <div class="text-xs text-slate-200 mt-0.5">پذیرش بیمه، عیدی و سنوات</div>
-              </div>
-              <div class="bg-white/10 backdrop-blur-sm border border-white/15 rounded-xl p-3">
-                <div class="text-cta-gold font-black text-base sm:text-lg">گشت ۲۴/۷</div>
-                <div class="text-xs text-slate-200 mt-0.5">بازرسی سرزده شبانه</div>
+                <div class="text-cta-gold font-black text-base sm:text-lg">آکادمی رسمی</div>
+                <div class="text-xs text-slate-200 mt-0.5">کارنامه کفایت آموزش</div>
               </div>
             </div>
           </div>
 
-          <!-- ستون چپ: پنل بصری سپر حفاظتی و وضعیت قرارداد سازمانی -->
+          <!-- ستون چپ: پنل بصری سپر حفاظتی با تصاویر واقعی عملیات و وضعیت قرارداد سازمانی -->
           <div class="lg:col-span-5">
-            <div class="bg-white text-slate-900 rounded-3xl p-6 shadow-elevated border border-slate-200/80 relative">
-              <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-4">
+            <div class="bg-white text-slate-900 rounded-3xl p-5 sm:p-6 shadow-elevated border border-slate-200/80 relative">
+              <!-- نوار تصویر واقعی پرسنل و تابلوی رسمی حفاظت -->
+              <div class="grid grid-cols-2 gap-2.5 mb-4">
+                <figure class="relative rounded-2xl overflow-hidden bg-slate-100 h-36 sm:h-40 border border-slate-200">
+                  <img src="assets/img/photos/hero-security-officer-dideban.webp" alt="افسر نگهبان مؤسسه دیدبان امین توانا با یونیفرم رسمی مرکز انتظام" width="800" height="1067" loading="eager" decoding="async" class="w-full h-full object-cover object-top" />
+                  <figcaption class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-navy-dark/90 to-transparent px-2.5 py-2 text-[10px] font-bold text-white">یونیفرم رسمی مرکز انتظام</figcaption>
+                </figure>
+                <figure class="relative rounded-2xl overflow-hidden bg-slate-100 h-36 sm:h-40 border border-slate-200">
+                  <img src="assets/img/photos/official-protected-facility-sign-azin-taneh.webp" alt="تابلوی رسمی حفاظت فیزیکی کارخانه آذین تنه (گروه ایران‌خودرو) توسط دیدبان امین توانا" width="720" height="960" loading="eager" decoding="async" class="w-full h-full object-cover object-center" />
+                  <figcaption class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-navy-dark/90 to-transparent px-2.5 py-2 text-[10px] font-bold text-white">حفاظت کارخانه آذین تنه (ایران‌خودرو)</figcaption>
+                </figure>
+              </div>
+
+              <div class="flex items-center justify-between border-b border-slate-100 pb-3.5 mb-3.5">
                 <div class="flex items-center gap-3">
                   <div class="w-10 h-10 rounded-xl bg-navy/10 text-navy flex items-center justify-center font-bold">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
                   </div>
                   <div>
                     <h2 class="text-sm font-extrabold text-navy">سپر تضمین قرارداد B2B دیدبان امین توانا</h2>
-                    <p class="text-[11px] text-slate-500">موسسه ثبت‌شده به شماره ۵۵۳۵۶ | شناسه ملی ۱۴۰۱۲۱۰۷۸۱۷</p>
+                    <p class="text-[11px] text-slate-500">شماره ثبت ۵۵۳۵۶ | شناسه ملی ۱۴۰۱۲۱۰۷۸۱۷</p>
                   </div>
                 </div>
-                <span class="bg-emerald-100 text-emerald-800 text-[11px] font-bold px-2.5 py-1 rounded-full">فعال ۱۴۰۵</span>
+                <a href="https://rasmio.com/company/14012107817/%D8%AF%DB%8C%D8%AF%D8%A8%D8%A7%D9%86%20%D8%A7%D9%85%DB%8C%D9%86%20%D8%AA%D9%88%D8%A7%D9%86%D8%A7/" target="_blank" rel="noopener noreferrer" class="bg-emerald-100 hover:bg-emerald-200 text-emerald-800 text-[11px] font-bold px-2.5 py-1 rounded-full transition">استعلام رسمیو ↗</a>
               </div>
 
               <!-- خلاصه تعهدات کلیدی در کارت هیرو -->
-              <ul class="space-y-3 text-xs sm:text-sm">
-                <li class="flex items-start gap-2.5 bg-slatebg p-3 rounded-xl">
+              <ul class="space-y-2.5 text-xs sm:text-sm">
+                <li class="flex items-start gap-2.5 bg-slatebg p-2.5 rounded-xl">
                   <svg class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 13l4 4L19 7"/></svg>
                   <div>
-                    <strong class="text-navy">سلب کامل رابطه کارگری از کارفرما:</strong>
-                    <span class="text-slate-600 block mt-0.5">کلیه فیش‌های حقوقی، لیست بیمه تأمین اجتماعی و تسویه‌حساب سنوات به نام شرکت دیدبان امین توانا صادر می‌شود.</span>
+                    <strong class="text-navy">بازدید و ممیزی رایگان توسط فرمانده بازنشسته:</strong>
+                    <span class="text-slate-600 block mt-0.5">شناسایی نقاط کور، انطباق با مبحث ۴ و ارزیابی ریسک ماده ۶۶ پیش از عقد قرارداد.</span>
                   </div>
                 </li>
-                <li class="flex items-start gap-2.5 bg-slatebg p-3 rounded-xl">
+                <li class="flex items-start gap-2.5 bg-slatebg p-2.5 rounded-xl">
                   <svg class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 13l4 4L19 7"/></svg>
                   <div>
-                    <strong class="text-navy">گزینش ۵ مرحله‌ای تحت نظارت مرکز انتظام:</strong>
-                    <span class="text-slate-600 block mt-0.5">گواهی عدم سوءپیشینه کیفری، تست عدم اعتیاد، ضامن معتبر، معاینات طب کار و دوره آموزش حفاظت فیزیکی.</span>
+                    <strong class="text-navy">پشتوانه وکیل پایه یک و سلب رابطه کارگری:</strong>
+                    <span class="text-slate-600 block mt-0.5">بیمه، فیش حقوقی، سنوات و دفاع قضایی کاملاً بر عهده دیدبان امین توانا است.</span>
                   </div>
                 </li>
-                <li class="flex items-start gap-2.5 bg-slatebg p-3 rounded-xl">
+                <li class="flex items-start gap-2.5 bg-slatebg p-2.5 rounded-xl">
                   <svg class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 13l4 4L19 7"/></svg>
                   <div>
-                    <strong class="text-navy">انطباق با پیوست مبحث ۴ مقررات ملی ساختمان:</strong>
-                    <span class="text-slate-600 block mt-0.5">استقرار در اتاق نگهبانی بدون ایجاد حق سکونت دائمی یا دعوای تخلیه واحد سرایداری.</span>
+                    <strong class="text-navy">استقرار پس از صدور «کارنامه کفایت آموزش»:</strong>
+                    <span class="text-slate-600 block mt-0.5">گزینش ۵ مرحله‌ای پلیس پیشگیری و آموزش در آکادمی مجوزدار مرکز انتظام.</span>
                   </div>
                 </li>
               </ul>
 
-              <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between gap-2">
-                <div class="text-xs text-slate-600">
-                  می‌خواهید هزینه دقیق شیفت مجموعه خود را بدانید؟
-                </div>
-                <a href="#shift-estimator" class="text-xs font-extrabold text-cta-blue hover:text-cta-blueHover flex items-center gap-1">
-                  <span>برآوردگر آنلاین ۱۴۰۵</span>
+              <div class="mt-4 pt-3.5 border-t border-slate-100 flex items-center justify-between gap-2">
+                <a href="resume/" class="text-xs font-bold text-slate-600 hover:text-navy transition">
+                  مشاهده کارنامه مترو، ایران‌خودرو و برج‌ها ←
+                </a>
+                <a href="#shift-estimator" class="text-xs font-extrabold text-cta-blue hover:text-cta-blueHover flex items-center gap-1 shrink-0">
+                  <span>برآوردگر ۱۴۰۵</span>
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                 </a>
               </div>
@@ -470,6 +509,259 @@
               <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
               <span>حق تعویض <strong class="text-white">بی‌قیدوشرط</strong> هر نیرو ظرف ۴۸ ساعت</span>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ۲.۵ بخش مرجعیت و اهرم اعتبار دیدبان امین توانا (هیئت‌مدیره فرماندهان، وکیل پایه یک، آکادمی و کارنامه پروژه‌های شاخص) -->
+    <section id="reputation-moat" class="py-16 sm:py-20 bg-slatebg border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+        <div class="text-center max-w-3xl mx-auto">
+          <span class="inline-block bg-navy text-cta-gold text-xs font-extrabold px-4 py-1.5 rounded-full mb-3">
+            اهرم اعتبار واقعی دیدبان امین توانا — قابل استعلام و مستند
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-black text-navy">
+            کارنامه پروژه‌های شاخص، هیئت‌مدیره فرماندهان و پشتوانه قضایی اختصاصی
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">
+            کارفرمایان حرفه‌ای روی <strong class="text-navy">کاهش ریسک امنیتی، حقوقی و آبرویی</strong> تصمیم می‌گیرند. ترکیب فرماندهان بازنشسته فراجا و ارتش، وکیل پایه یک دادگستری، آکادمی مجوزدار و رزومه زیرساخت‌های ملی، وجه تمایز ماست.
+          </p>
+        </div>
+
+        <!-- ۱. کارنامه اجرایی تراز اول (۴ حوزه اصلی) -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-corporate border border-slate-200">
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+            <div>
+              <h3 class="text-lg sm:text-xl font-black text-navy">گزیده پروژه‌ها و کارفرمایان شاخص در کارنامه مؤسسه</h3>
+              <p class="text-xs sm:text-sm text-slate-500 mt-1">پوشش حفاظت فیزیکی، لابی‌منی، مشاوره امنیتی و آموزش تخصصی در ۱۴ مجموعه تراز اول</p>
+            </div>
+            <a href="resume/" class="inline-flex items-center gap-1.5 bg-navy hover:bg-navy-light text-white font-bold text-xs px-4 py-2.5 rounded-xl transition">
+              <span>📄 دریافت نسخه کامل PDF رزومه</span>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-slatebg rounded-2xl p-4 border border-slate-200/80 space-y-2.5">
+              <div class="flex items-center gap-2 text-navy font-extrabold text-sm">
+                <span class="w-8 h-8 rounded-lg bg-navy text-cta-gold flex items-center justify-center text-sm shrink-0">🚆</span>
+                <span>زیرساخت، ریلی و انرژی</span>
+              </div>
+              <ul class="space-y-1.5 text-xs text-slate-700 leading-relaxed">
+                <li>• <strong class="text-navy">خط ۵ مترو تهران-کرج</strong> (حفاظت محور صادقیه تا گلشهر و آموزش)</li>
+                <li>• <strong class="text-navy">نیروگاه برق قائم منتظر</strong> (فردیس کرج)</li>
+                <li>• <strong class="text-navy">خط راه‌آهن انشعابی مهرشهر کرج</strong></li>
+              </ul>
+            </div>
+
+            <div class="bg-slatebg rounded-2xl p-4 border border-slate-200/80 space-y-2.5">
+              <div class="flex items-center gap-2 text-navy font-extrabold text-sm">
+                <span class="w-8 h-8 rounded-lg bg-navy text-cta-gold flex items-center justify-center text-sm shrink-0">🏭</span>
+                <span>صنایع و کارخانجات تولیدی</span>
+              </div>
+              <ul class="space-y-1.5 text-xs text-slate-700 leading-relaxed">
+                <li>• <strong class="text-navy">کارخانه آذین تنه (گروه ایران‌خودرو)</strong> — حفاظت ۲۴ ساعته و مشاوره</li>
+                <li>• <strong class="text-navy">شرکت فولاد یزد</strong> (برگزاری دوره‌های تخصصی آموزش حراست)</li>
+                <li>• <strong class="text-navy">سپیدان رز پلاستیک</strong>، <strong class="text-navy">ایساتیس</strong> و <strong class="text-navy">گسترش آهن‌راه</strong></li>
+              </ul>
+            </div>
+
+            <div class="bg-slatebg rounded-2xl p-4 border border-slate-200/80 space-y-2.5">
+              <div class="flex items-center gap-2 text-navy font-extrabold text-sm">
+                <span class="w-8 h-8 rounded-lg bg-navy text-cta-gold flex items-center justify-center text-sm shrink-0">🛍️</span>
+                <span>مراکز تجاری و گردشگری</span>
+              </div>
+              <ul class="space-y-1.5 text-xs text-slate-700 leading-relaxed">
+                <li>• <strong class="text-navy">مجتمع تفریحی و توریستی آب و آتش</strong> (تهران) — تأمین تیم انتظامات</li>
+                <li>• <strong class="text-navy">مجتمع تجاری نیایش مال</strong> (تهران) — مشاوره تخصصی حفاظتی و امنیتی</li>
+              </ul>
+            </div>
+
+            <div class="bg-slatebg rounded-2xl p-4 border border-slate-200/80 space-y-2.5">
+              <div class="flex items-center gap-2 text-navy font-extrabold text-sm">
+                <span class="w-8 h-8 rounded-lg bg-navy text-cta-gold flex items-center justify-center text-sm shrink-0">🏢</span>
+                <span>برج‌های مسکونی و شهرک‌ها</span>
+              </div>
+              <ul class="space-y-1.5 text-xs text-slate-700 leading-relaxed">
+                <li>• برج‌های <strong class="text-navy">گل نرگس</strong>، <strong class="text-navy">باران</strong> و <strong class="text-navy">مروارید غرب</strong></li>
+                <li>• برج‌های <strong class="text-navy">حسابرسان</strong>، <strong class="text-navy">نسیم</strong> و <strong class="text-navy">چناران</strong> (تهران و کرج)</li>
+                <li>• حفاظت پیرامونی <strong class="text-navy">محله قنات دماوند</strong></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- ۲. هیئت‌مدیره فرماندهان ارشد بازنشسته و مرجعیت علمی -->
+        <div>
+          <div class="flex flex-wrap items-end justify-between gap-3 mb-6">
+            <div>
+              <span class="text-xs font-bold text-cta-blue bg-blue-100 px-3 py-1 rounded-full">نظارت مستقیم فرماندهی بر طراحی پروتکل هر پروژه</span>
+              <h3 class="text-xl sm:text-2xl font-black text-navy mt-2">اعضای هیئت‌مدیره و سوابق فرماندهی و علمی</h3>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-600 max-w-md">
+              ممیزی نقاط کور و تدوین شرح وظایف نیروهای پروژه شما مستقیماً توسط مدیران ارشد باسابقه انتظامی، تشریفاتی و دانشگاهی انجام می‌شود.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- عضو ۱ -->
+            <div class="bg-white rounded-3xl p-6 shadow-corporate border border-slate-200 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-3">
+                  <span class="bg-navy text-cta-gold text-[11px] font-extrabold px-3 py-1 rounded-full">مدیرعامل و عضو هیئت‌مدیره</span>
+                  <span class="text-xs font-bold text-slate-400">فرماندهی و عملیات</span>
+                </div>
+                <h4 class="text-lg font-black text-navy">سرهنگ ستاد بازنشسته قاسم قربانی</h4>
+                <p class="text-xs font-semibold text-cta-blue mt-1">کارشناسی ارشد فرماندهی و مدیریت در نیروی انتظامی</p>
+                <ul class="mt-4 space-y-2 text-xs text-slate-600 leading-relaxed">
+                  <li>• بیش از <strong class="text-navy">۱۲ سال ریاست و جانشینی کلانتری</strong> و ۸ سال فرماندهی انتظامی</li>
+                  <li>• <strong class="text-navy">مشاور حفاظت و حراست خط ۵ مترو</strong> تهران-کرج</li>
+                  <li>• ۳ سال فرماندهی یگان‌های <strong class="text-navy">حفاظت و تشریفات قوه قضائیه</strong></li>
+                  <li>• مدرس و استاد ممیزی مراکز آموزش انتظامی و دانشگاه علمی‌کاربردی</li>
+                </ul>
+              </div>
+              <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] font-bold text-emerald-700">
+                ✓ تعامل مؤثر و قانونی با کلانتری‌های حوزه استحفاظی پروژه‌ها
+              </div>
+            </div>
+
+            <!-- عضو ۲ -->
+            <div class="bg-white rounded-3xl p-6 shadow-corporate border border-slate-200 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-3">
+                  <span class="bg-navy text-cta-gold text-[11px] font-extrabold px-3 py-1 rounded-full">نایب‌رئیس هیئت‌مدیره</span>
+                  <span class="text-xs font-bold text-slate-400">حفاظت و تشریفات</span>
+                </div>
+                <h4 class="text-lg font-black text-navy">سرهنگ ستاد بازنشسته هاشم ملکوتی‌خواه</h4>
+                <p class="text-xs font-semibold text-cta-blue mt-1">کارشناسی ارشد ستاد مشترک + گواهینامه مدیریت هتل و تشریفات</p>
+                <ul class="mt-4 space-y-2 text-xs text-slate-600 leading-relaxed">
+                  <li>• قریب به <strong class="text-navy">۲۳ سال فرماندهی یگان تأمین حفاظت و تشریفات</strong> ستاد مشترک ارتش</li>
+                  <li>• دارای گواهینامه تخصصی <strong class="text-navy">مدیریت هتل و تشریفات</strong> از سازمان فنی‌وحرفه‌ای</li>
+                  <li>• مدرس و عضو هیئت‌علمی مراکز آموزشی ارتش</li>
+                  <li>• کارشناس نظامی موزه ملی انقلاب اسلامی و دفاع مقدس</li>
+                </ul>
+              </div>
+              <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] font-bold text-emerald-700">
+                ✓ استانداردسازی رفتار و تشریفات لابی‌من‌های برج‌های لوکس
+              </div>
+            </div>
+
+            <!-- عضو ۳ -->
+            <div class="bg-white rounded-3xl p-6 shadow-corporate border border-slate-200 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-3">
+                  <span class="bg-navy text-cta-gold text-[11px] font-extrabold px-3 py-1 rounded-full">عضو هیئت‌مدیره و کمیته علمی</span>
+                  <span class="text-xs font-bold text-slate-400">جرم‌یابی و پیشگیری</span>
+                </div>
+                <h4 class="text-lg font-black text-navy">سرهنگ ستاد بازنشسته دکتر مهدی ترکمن</h4>
+                <p class="text-xs font-semibold text-cta-blue mt-1">دکتری تخصصی انتظامی (گرایش جرم‌یابی)</p>
+                <ul class="mt-4 space-y-2 text-xs text-slate-600 leading-relaxed">
+                  <li>• استاد و مدرس <strong class="text-navy">دانشکده فرماندهی و ستاد (دافوس)</strong></li>
+                  <li>• استاد و مدرس <strong class="text-navy">دانشگاه علوم انتظامی امین</strong></li>
+                  <li>• ۱۰ سال سابقه افسر اطلاعات در کلانتری‌های تهران و البرز</li>
+                  <li>• متخصص تحلیل نقاط آسیب‌پذیر، جرم‌یابی و پیشگیری از سرقت</li>
+                </ul>
+              </div>
+              <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] font-bold text-emerald-700">
+                ✓ طراحی علمی پروتکل پیشگیری از سرقت و ممیزی نقاط کور
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ۳. دو ستون نهادی متمایز: پشتوانه وکیل پایه یک + آکادمی آموزش مجوزدار -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <!-- پشتوانه قضایی اختصاصی -->
+          <div class="lg:col-span-5 bg-navy text-white rounded-3xl p-6 sm:p-8 shadow-elevated flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="inline-flex items-center gap-2 bg-cta-gold/20 border border-cta-gold/40 text-amber-300 text-xs font-extrabold px-3.5 py-1.5 rounded-full">
+                ⚖️ پشتوانه حقوقی و قضایی اختصاصی
+              </div>
+              <h3 class="text-xl font-black leading-snug">
+                حمایت اختصاصی «وکیل پایه یک دادگستری» برای آرامش کامل کارفرمایان
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                برخلاف شرکت‌های خدماتی فاقد پشتوانه حقوقی، مؤسسه دیدبان امین توانا با بهره‌گیری از وکیل پایه یک دادگستری، پرونده‌های حقوقی و کیفری مرتبط با حفاظت اماکن تحت پوشش را به صورت تخصصی پیگیری می‌کند:
+              </p>
+              <ul class="space-y-2 text-xs sm:text-sm text-slate-100">
+                <li class="flex items-start gap-2"><span class="text-cta-gold font-bold">✓</span><span>تنظیم قرارداد بی‌نقص با سلب کامل رابطه کارگری از کارفرما</span></li>
+                <li class="flex items-start gap-2"><span class="text-cta-gold font-bold">✓</span><span>پوشش و دفاع حقوقی در برابر دعاوی اداره کار و ماده ۶۶ تأمین اجتماعی</span></li>
+                <li class="flex items-start gap-2"><span class="text-cta-gold font-bold">✓</span><span>پیشگیری از دعوای تصرف و حق سکونت سرایداری (پیوست مبحث ۴)</span></li>
+                <li class="flex items-start gap-2"><span class="text-cta-gold font-bold">✓</span><span>پیگیری قضایی و کیفری حوادث، تعرضات یا سرقت‌های احتمالی</span></li>
+              </ul>
+            </div>
+            <div class="mt-6 pt-4 border-t border-white/15">
+              <button type="button" data-open-visit-modal="true" class="w-full bg-cta-gold hover:bg-amber-500 text-navy-dark font-black text-sm py-3.5 rounded-xl transition">
+                درخواست ممیزی رایگان ریسک حقوقی و نقاط کور
+              </button>
+            </div>
+          </div>
+
+          <!-- آکادمی آموزش مجوزدار با عکس واقعی کلاس -->
+          <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 shadow-corporate border border-slate-200 grid grid-cols-1 sm:grid-cols-12 gap-6 items-center">
+            <div class="sm:col-span-7 space-y-3.5">
+              <span class="inline-block bg-emerald-100 text-emerald-800 text-xs font-extrabold px-3 py-1 rounded-full">
+                🎓 آکادمی آموزش مجوزدار مرکز انتظام فراجا
+              </span>
+              <h3 class="text-lg sm:text-xl font-black text-navy">
+                استقرار نیرو صرفاً پس از دریافت «کارنامه کفایت آموزش»
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                هیچ نیرویی بدون گذراندن دوره رسمی و آزمون عملی در آکادمی مجوزدار دیدبان امین توانا به پروژه اعزام نمی‌شود. سابقه برگزاری دوره‌های تخصصی برای <strong class="text-navy">شرکت فولاد یزد</strong> و <strong class="text-navy">خط ۵ مترو تهران-کرج</strong> گواه کیفیت آموزشی ماست.
+              </p>
+              <div class="grid grid-cols-2 gap-2 text-xs pt-1">
+                <div class="bg-slatebg p-2.5 rounded-xl border border-slate-200 font-bold text-navy">• حفاظت فیزیکی و دفاع شخصی</div>
+                <div class="bg-slatebg p-2.5 rounded-xl border border-slate-200 font-bold text-navy">• HSE و اطفای حریق عملی</div>
+                <div class="bg-slatebg p-2.5 rounded-xl border border-slate-200 font-bold text-navy">• تشریفات و حقوق شهروندی</div>
+                <div class="bg-slatebg p-2.5 rounded-xl border border-slate-200 font-bold text-navy">• گزارش‌نویسی و حفاظت اسناد</div>
+              </div>
+            </div>
+            <div class="sm:col-span-5">
+              <figure class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-100">
+                <img src="assets/img/photos/security-personnel-training-course.webp" alt="کلاس رسمی آموزش پرسنل حفاظتی دیدبان امین توانا تحت نظارت مرکز انتظام" width="720" height="960" loading="lazy" decoding="async" class="w-full h-64 sm:h-72 object-cover object-center" />
+                <figcaption class="bg-navy text-white text-[11px] font-semibold px-3 py-2 text-center">
+                  کلاس رسمی آموزش و صدور کارنامه کفایت آموزش مرکز انتظام
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <!-- ۴. گالری تصاویر واقعی عملیات، استقرار و تجهیزات مجاز -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-corporate border border-slate-200">
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+            <div>
+              <h3 class="text-lg sm:text-xl font-black text-navy">مستندات واقعی عملیات، گشت‌زنی و استقرار پرسنل</h3>
+              <p class="text-xs sm:text-sm text-slate-500 mt-0.5">تصاویر واقعی پرسنل دیدبان امین توانا در برج‌ها، کارخانه‌ها، مجتمع آب و آتش، گشت موتوری و کارگاه‌ها</p>
+            </div>
+            <span class="text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">۱۰۰٪ تصاویر واقعی میدانی</span>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3.5">
+            <figure class="rounded-2xl overflow-hidden border border-slate-200 bg-slatebg flex flex-col">
+              <img src="assets/img/photos/luxury-tower-concierge-uniform.webp" alt="استقرار افسر حفاظتی در لابی برج لوکس مسکونی" width="720" height="960" loading="lazy" decoding="async" class="w-full h-44 object-cover object-top" />
+              <figcaption class="p-2.5 text-[11px] font-bold text-navy text-center">لابی برج مسکونی لوکس</figcaption>
+            </figure>
+            <figure class="rounded-2xl overflow-hidden border border-slate-200 bg-slatebg flex flex-col">
+              <img src="assets/img/photos/commercial-center-gate-security.webp" alt="استقرار تیم انتظامات دیدبان امین توانا در گذر گردشگری آب و آتش تهران" width="720" height="960" loading="lazy" decoding="async" class="w-full h-44 object-cover object-top" />
+              <figcaption class="p-2.5 text-[11px] font-bold text-navy text-center">مجتمع تفریحی آب و آتش</figcaption>
+            </figure>
+            <figure class="rounded-2xl overflow-hidden border border-slate-200 bg-slatebg flex flex-col">
+              <img src="assets/img/photos/industrial-plant-gate-security.webp" alt="کنترل گیت ورودی کارخانه توسط افسر دیدبان امین توانا" width="960" height="720" loading="lazy" decoding="async" class="w-full h-44 object-cover object-top" />
+              <figcaption class="p-2.5 text-[11px] font-bold text-navy text-center">حراست گیت کارخانه صنعتی</figcaption>
+            </figure>
+            <figure class="rounded-2xl overflow-hidden border border-slate-200 bg-slatebg flex flex-col">
+              <img src="assets/img/photos/industrial-patrol-motorcycle-officer.webp" alt="بازرس و گشت موتوری پیرامونی با ثبت تگ RFID" width="720" height="960" loading="lazy" decoding="async" class="w-full h-44 object-cover object-top" />
+              <figcaption class="p-2.5 text-[11px] font-bold text-navy text-center">گشت موتوری و بازرسی پیرامونی</figcaption>
+            </figure>
+            <figure class="rounded-2xl overflow-hidden border border-slate-200 bg-slatebg flex flex-col">
+              <img src="assets/img/photos/construction-site-guarding-service.webp" alt="نگهبان رسمی مرکز انتظام مستقر در پروژه ساختمانی" width="720" height="960" loading="lazy" decoding="async" class="w-full h-44 object-cover object-top" />
+              <figcaption class="p-2.5 text-[11px] font-bold text-navy text-center">حفاظت پروژه ساختمانی</figcaption>
+            </figure>
+            <figure class="rounded-2xl overflow-hidden border border-slate-200 bg-slatebg flex flex-col">
+              <img src="assets/img/photos/authorized-defensive-equipment-stun-spray.webp" alt="تجهیزات مجاز دفاع شخصی غیرکشنده مرکز انتظام" width="960" height="633" loading="lazy" decoding="async" class="w-full h-44 object-cover object-center" />
+              <figcaption class="p-2.5 text-[11px] font-bold text-navy text-center">تجهیزات دفاعی مجاز مرکز انتظام</figcaption>
+            </figure>
           </div>
         </div>
       </div>
@@ -736,12 +1028,15 @@
               بازدید فنی رایگان و ارزیابی نقاط کور امنیتی مجموعه شما توسط کارشناس ارشد دیدبان امین توانا
             </div>
           </div>
-          <div class="flex items-center gap-3 shrink-0">
-            <button type="button" data-open-visit-modal="true" class="bg-cta-blue hover:bg-cta-blueHover text-white font-bold text-sm px-5 py-3 rounded-xl shadow transition">
+          <div class="flex flex-wrap items-center justify-center gap-2.5 shrink-0">
+            <button type="button" data-open-visit-modal="true" class="min-h-[44px] bg-cta-blue hover:bg-cta-blueHover active:scale-95 text-white font-bold text-sm px-5 py-3 rounded-xl shadow transition">
               درخواست ممیزی رایگان نقاط کور
             </button>
-            <a data-phone-link href="tel:02144289000" class="bg-navy text-white font-bold text-xs px-4 py-3 rounded-xl transition">
+            <a id="comparison-cta-call" data-phone-link href="tel:02144289000" class="min-h-[44px] inline-flex items-center bg-navy hover:bg-navy-light active:scale-95 text-white font-bold text-xs px-4 py-3 rounded-xl transition">
               تماس فوری ←
+            </a>
+            <a id="comparison-cta-wa" data-wa="سلام، پس از بررسی جدول مقایسه ریسک‌های قانونی، جهت مشاوره و ممیزی رایگان پیام می‌دهم." href="#" target="_blank" rel="noopener noreferrer" class="min-h-[44px] inline-flex items-center bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white font-bold text-xs px-4 py-3 rounded-xl transition">
+              مشاوره واتساپ
             </a>
           </div>
         </div>
@@ -763,15 +1058,15 @@
           </p>
         </div>
 
-        <!-- دکمه‌های تب خدمات تخصصی -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-8" role="tablist" aria-label="تب‌های خدمات تخصصی">
+        <!-- دکمه‌های تب خدمات تخصصی (۴ خوشه اصلی BOFU) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-8" role="tablist" aria-label="تب‌های خدمات تخصصی">
           <button type="button" data-service-tab="residential" class="service-tab-btn flex items-center gap-3 p-4 rounded-2xl border-2 border-cta-blue bg-navy text-white text-right shadow-md transition">
             <div class="w-11 h-11 rounded-xl bg-white/15 flex items-center justify-center shrink-0 text-amber-300">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
             </div>
             <div>
-              <div class="text-sm sm:text-base font-extrabold">۱. برج‌ها و مجتمع‌های مسکونی و اداری</div>
-              <div class="text-xs opacity-80 mt-0.5">لابی‌من تشریفاتی، کنترل تردد و ثبت وقایع</div>
+              <div class="text-sm font-extrabold">۱. برج‌ها و مجتمع‌های مسکونی</div>
+              <div class="text-xs opacity-80 mt-0.5">لابی‌من تشریفاتی، کنترل تردد و مشاعات</div>
             </div>
           </button>
 
@@ -780,8 +1075,8 @@
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"/></svg>
             </div>
             <div>
-              <div class="text-sm sm:text-base font-extrabold">۲. کارخانه‌ها، انبارها و شهرک‌های صنعتی</div>
-              <div class="text-xs text-slate-500 mt-0.5">حفاظت ۲۴ ساعته، کنترل بار و باسکول، گشت‌زنی</div>
+              <div class="text-sm font-extrabold">۲. کارخانه‌ها و شهرک‌های صنعتی</div>
+              <div class="text-xs text-slate-500 mt-0.5">کنترل باسکول، بارنامه و گشت RFID</div>
             </div>
           </button>
 
@@ -790,8 +1085,18 @@
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
             </div>
             <div>
-              <div class="text-sm sm:text-base font-extrabold">۳. پروژه‌های ساختمانی و کارگاهی</div>
-              <div class="text-xs text-slate-500 mt-0.5">حفاظت از مصالح، ابزارآلات و ایمنی کارگاه</div>
+              <div class="text-sm font-extrabold">۳. پروژه‌های ساختمانی و عمرانی</div>
+              <div class="text-xs text-slate-500 mt-0.5">حفاظت مصالح و بیمه ماده ۶۶</div>
+            </div>
+          </button>
+
+          <button type="button" data-service-tab="commercial" class="service-tab-btn flex items-center gap-3 p-4 rounded-2xl border-2 border-slate-200 bg-white text-slate-800 hover:border-slate-300 text-right shadow-sm transition">
+            <div class="w-11 h-11 rounded-xl bg-slatebg flex items-center justify-center shrink-0 text-navy">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <div>
+              <div class="text-sm font-extrabold">۴. مراکز تجاری، درمانی و سازمان‌ها</div>
+              <div class="text-xs text-slate-500 mt-0.5">انتظامات مال، بیمارستان، سازمان و همایش</div>
             </div>
           </button>
         </div>
@@ -840,8 +1145,12 @@
               </div>
             </div>
 
-            <div class="lg:col-span-5 bg-slatebg rounded-2xl p-6 border border-slate-200">
-              <div class="text-xs font-bold text-slate-500 uppercase mb-3">استاندارد تحویل شیفت لابی‌من (SLA)</div>
+            <div class="lg:col-span-5 bg-slatebg rounded-2xl p-5 sm:p-6 border border-slate-200 space-y-4">
+              <figure class="rounded-xl overflow-hidden border border-slate-200 bg-white">
+                <img src="assets/img/photos/residential-complex-lobby-man.webp" alt="لابی‌من مستقر در میز پذیرش مجتمع مسکونی" width="720" height="960" loading="lazy" decoding="async" class="w-full h-52 object-cover object-top" />
+                <figcaption class="px-3 py-2 text-[11px] font-bold text-navy bg-white border-t border-slate-100">استقرار لابی‌من در میز پذیرش مجتمع مسکونی (تحت نظارت سرهنگ ملکوتی‌خواه)</figcaption>
+              </figure>
+              <div class="text-xs font-bold text-slate-500 uppercase">استاندارد تحویل شیفت لابی‌من (SLA)</div>
               <div class="space-y-3 text-xs sm:text-sm">
                 <div class="flex items-center justify-between bg-white p-3 rounded-xl border border-slate-200">
                   <span class="text-slate-600">الگوی شیفت پیشنهادی:</span>
@@ -908,8 +1217,12 @@
               </div>
             </div>
 
-            <div class="lg:col-span-5 bg-slatebg rounded-2xl p-6 border border-slate-200">
-              <div class="text-xs font-bold text-slate-500 uppercase mb-3">استاندارد حراست صنعتی (SLA)</div>
+            <div class="lg:col-span-5 bg-slatebg rounded-2xl p-5 sm:p-6 border border-slate-200 space-y-4">
+              <figure class="rounded-xl overflow-hidden border border-slate-200 bg-white">
+                <img src="assets/img/photos/industrial-plant-gate-security.webp" alt="حراست گیت ورودی کارخانه و کنترل تردد صنعتی" width="960" height="720" loading="lazy" decoding="async" class="w-full h-52 object-cover object-top" />
+                <figcaption class="px-3 py-2 text-[11px] font-bold text-navy bg-white border-t border-slate-100">حفاظت گیت کارخانه و کنترل بارنامه (سابقه کارخانه آذین تنه گروه ایران‌خودرو)</figcaption>
+              </figure>
+              <div class="text-xs font-bold text-slate-500 uppercase">استاندارد حراست صنعتی (SLA)</div>
               <div class="space-y-3 text-xs sm:text-sm">
                 <div class="flex items-center justify-between bg-white p-3 rounded-xl border border-slate-200">
                   <span class="text-slate-600">الگوی شیفت پیشنهادی:</span>
@@ -976,8 +1289,12 @@
               </div>
             </div>
 
-            <div class="lg:col-span-5 bg-slatebg rounded-2xl p-6 border border-slate-200">
-              <div class="text-xs font-bold text-slate-500 uppercase mb-3">استاندارد حفاظت کارگاهی (SLA)</div>
+            <div class="lg:col-span-5 bg-slatebg rounded-2xl p-5 sm:p-6 border border-slate-200 space-y-4">
+              <figure class="rounded-xl overflow-hidden border border-slate-200 bg-white">
+                <img src="assets/img/photos/construction-site-guarding-service.webp" alt="نگهبان مجوزدار مستقر در پروژه ساختمانی و کارگاهی" width="720" height="960" loading="lazy" decoding="async" class="w-full h-52 object-cover object-top" />
+                <figcaption class="px-3 py-2 text-[11px] font-bold text-navy bg-white border-t border-slate-100">نگهبان رسمی پروژه عمرانی با پوشش کامل بیمه حوادث ماده ۶۶</figcaption>
+              </figure>
+              <div class="text-xs font-bold text-slate-500 uppercase">استاندارد حفاظت کارگاهی (SLA)</div>
               <div class="space-y-3 text-xs sm:text-sm">
                 <div class="flex items-center justify-between bg-white p-3 rounded-xl border border-slate-200">
                   <span class="text-slate-600">الگوی شیفت پیشنهادی:</span>
@@ -1000,23 +1317,114 @@
           </div>
         </div>
 
-        <!-- پیوندهای داخلی سایر خدمات تخصصی دارای مجوز انتظام فراجا -->
-        <div class="mt-8 bg-white rounded-2xl p-6 border border-slate-200">
-          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <!-- محتوای تب ۴: مراکز تجاری، بیمارستان‌ها، سازمان‌ها و همایش‌ها -->
+        <div id="service-panel-commercial" class="service-panel hidden bg-white rounded-3xl p-6 sm:p-8 lg:p-10 shadow-corporate border border-slate-200">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-7 space-y-5">
+              <div class="inline-flex items-center gap-2 bg-purple-50 text-purple-900 border border-purple-200 px-3 py-1 rounded-full text-xs font-bold">
+                ویژه مدیران منابع انسانی، حراست سازمان‌ها، مراکز درمانی، مال‌ها و همایش‌ها
+              </div>
+              <h3 class="text-xl sm:text-2xl font-black text-navy">
+                حفاظت فیزیکی مراکز تجاری، بیمارستانی، سازمان‌ها و نگهبان تشریفاتی رویدادها
+              </h3>
+              <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                اداره اماکن پرتردد نیازمند پرسنلی است که علاوه بر گزینش ۵ مرحله‌ای پلیس پیشگیری فراجا و «کارنامه کفایت آموزش»، به کنترل خشم، مدیریت ازدحام، آرام‌سازی تنش مراجعین و تشریفات گیت VIP مسلط باشند؛ با تجربه عملیاتی در خط ۵ مترو، آب و آتش و مشاوره امنیتی نیایش مال.
+              </p>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+                <div class="p-3.5 rounded-xl bg-slatebg border border-slate-200/70">
+                  <div class="font-bold text-navy text-sm">🏥 انتظامات بیمارستان‌ها و سازمان‌ها</div>
+                  <p class="text-xs text-slate-600 mt-1">مدیریت محترمانه مراجعین، کنترل اورژانس و بخش‌های حساس، حفظ نظم پارکینگ و حراست از تجهیزات.</p>
+                </div>
+                <div class="p-3.5 rounded-xl bg-slatebg border border-slate-200/70">
+                  <div class="font-bold text-navy text-sm">🛍️ حفاظت مال‌ها و مراکز خرید</div>
+                  <p class="text-xs text-slate-600 mt-1">پایش اتاق مانیتورینگ CCTV، پیشگیری از سرقت در غرفه‌ها، هدایت رمپ پارکینگ و تخلیه اضطراری.</p>
+                </div>
+                <div class="p-3.5 rounded-xl bg-slatebg border border-slate-200/70">
+                  <div class="font-bold text-navy text-sm">🎖️ نگهبان تشریفاتی نمایشگاه و همایش</div>
+                  <p class="text-xs text-slate-600 mt-1">تأمین تیم تشریفاتی با یونیفرم یکدست برای گیت‌های VIP، نمایشگاه‌های تخصصی و مجامع شرکتی.</p>
+                </div>
+                <div class="p-3.5 rounded-xl bg-slatebg border border-slate-200/70">
+                  <div class="font-bold text-navy text-sm">⚖️ حذف کامل بار اداری منابع انسانی</div>
+                  <p class="text-xs text-slate-600 mt-1">تأمین کامل بیمه، فیش حقوقی، جایگزینی زیر ۴ ساعت، فاکتور رسمی و پشتوانه وکیل پایه یک دادگستری.</p>
+                </div>
+              </div>
+
+              <div class="pt-3 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                <button type="button" data-jump-estimator="commercial" class="w-full sm:w-auto bg-cta-blue hover:bg-cta-blueHover active:scale-95 text-white font-bold text-sm px-6 py-3.5 rounded-xl shadow transition text-center">
+                  محاسبه هزینه حراست سازمانی در برآوردگر
+                </button>
+                <button type="button" data-open-visit-modal="مرکز تجاری / درمانی" class="w-full sm:w-auto bg-slatebg hover:bg-slate-200 active:scale-95 text-navy font-bold text-sm px-5 py-3.5 rounded-xl border border-slate-300 transition text-center">
+                  درخواست ممیزی رایگان و کاتالوگ سازمانی
+                </button>
+                <a href="services/armed-escort-event-security/" class="text-center sm:text-right text-cta-blue hover:text-cta-blueHover font-bold text-sm underline decoration-dotted underline-offset-4 px-2 py-2">جزئیات حفاظت سازمان‌ها و همایش‌ها ←</a>
+              </div>
+            </div>
+
+            <div class="lg:col-span-5 bg-slatebg rounded-2xl p-5 sm:p-6 border border-slate-200 space-y-4">
+              <figure class="rounded-xl overflow-hidden border border-slate-200 bg-white">
+                <img src="assets/img/photos/commercial-center-gate-security.webp" alt="تیم انتظامات و حفاظت فیزیکی دیدبان امین توانا در مجتمع تجاری و گذر آب و آتش" width="960" height="720" loading="lazy" decoding="async" class="w-full h-52 object-cover object-top" />
+                <figcaption class="px-3 py-2 text-[11px] font-bold text-navy bg-white border-t border-slate-100">تیم انتظامات دیدبان امین توانا — تجربه مجتمع آب و آتش، خط ۵ مترو و مشاوره نیایش مال</figcaption>
+              </figure>
+              <div class="text-xs font-bold text-slate-500 uppercase">استاندارد حفاظت سازمانی و رویداد (SLA)</div>
+              <div class="space-y-3 text-xs sm:text-sm">
+                <div class="flex items-center justify-between bg-white p-3 rounded-xl border border-slate-200">
+                  <span class="text-slate-600">تأییدیه و گزینش نیرو:</span>
+                  <strong class="text-navy">۵ مرحله‌ای پلیس پیشگیری + کارنامه آموزش</strong>
+                </div>
+                <div class="flex items-center justify-between bg-white p-3 rounded-xl border border-slate-200">
+                  <span class="text-slate-600">زمان جایگزینی نیروی غایب:</span>
+                  <strong class="text-emerald-700">حداکثر زیر ۴ ساعت (رزرو عملیاتی)</strong>
+                </div>
+                <div class="flex items-center justify-between bg-white p-3 rounded-xl border border-slate-200">
+                  <span class="text-slate-600">نوع قرارداد:</span>
+                  <strong class="text-navy">سالانه سازمانی یا پروژه‌ای همایشی</strong>
+                </div>
+                <div class="flex items-center justify-between bg-white p-3 rounded-xl border border-slate-200">
+                  <span class="text-slate-600">مستندات مالی و حقوقی:</span>
+                  <strong class="text-navy">فاکتور رسمی + چک‌لیست ۱۰ نکته حقوقی</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- پیوندهای داخلی سایر خدمات و پوشش مناطق کلیدی تهران و شهرک‌های صنعتی -->
+        <div class="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-5">
+          <div class="lg:col-span-5 bg-white rounded-2xl p-6 border border-slate-200 flex flex-col justify-between gap-4">
             <div>
               <span class="text-xs font-bold text-cta-blue bg-blue-50 px-2.5 py-1 rounded-md">توسعه پوشش امنیتی</span>
-              <h4 class="text-base sm:text-lg font-black text-navy mt-1">سایر خدمات تخصصی حفاظت فیزیکی با مجوز ماده ۱۲۲</h4>
-              <p class="text-xs sm:text-sm text-slate-500 mt-0.5">مشاهده صفحات اختصاصی استانداردهای عملیاتی و شرایط استقرار نیرو در کاربری‌های خاص:</p>
+              <h4 class="text-base font-black text-navy mt-2">سایر خدمات تخصصی با مجوز ماده ۱۲۲</h4>
+              <p class="text-xs text-slate-500 mt-1">استانداردهای عملیاتی و شرایط استقرار نیرو در کاربری‌های خاص:</p>
             </div>
-            <div class="flex flex-wrap gap-2.5 w-full sm:w-auto">
-              <a href="services/commercial-complex-security/" class="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 bg-slatebg hover:bg-slate-200 text-navy font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl border border-slate-300 transition">
-                <span>🛍️ حراست مجتمع تجاری و مال</span>
+            <div class="flex flex-wrap gap-2">
+              <a href="services/commercial-complex-security/" class="flex-1 inline-flex items-center justify-center gap-1.5 bg-slatebg hover:bg-slate-200 text-navy font-bold text-xs px-3 py-2.5 rounded-xl border border-slate-300 transition">
+                <span>🛍️ مجتمع تجاری و مال</span>
                 <span class="text-cta-blue font-extrabold">←</span>
               </a>
-              <a href="services/residential-compound-security/" class="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 bg-slatebg hover:bg-slate-200 text-navy font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl border border-slate-300 transition">
-                <span>🏘️ حفاظت شهرک ویلایی و مسکونی</span>
+              <a href="services/residential-compound-security/" class="flex-1 inline-flex items-center justify-center gap-1.5 bg-slatebg hover:bg-slate-200 text-navy font-bold text-xs px-3 py-2.5 rounded-xl border border-slate-300 transition">
+                <span>🏘️ شهرک ویلایی و مسکونی</span>
                 <span class="text-cta-blue font-extrabold">←</span>
               </a>
+              <a href="services/armed-escort-event-security/" class="w-full inline-flex items-center justify-center gap-1.5 bg-slatebg hover:bg-slate-200 text-navy font-bold text-xs px-3 py-2.5 rounded-xl border border-slate-300 transition">
+                <span>🎖️ حفاظت سازمان‌ها، بیمارستان‌ها و همایش‌ها</span>
+                <span class="text-cta-blue font-extrabold">←</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 bg-white rounded-2xl p-6 border border-slate-200 flex flex-col justify-between gap-4">
+            <div>
+              <span class="text-xs font-bold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-md">پوشش سریع عملیاتی در تهران و البرز</span>
+              <h4 class="text-base font-black text-navy mt-2">صفحات تخصصی شهرک‌های صنعتی و مناطق برج‌نشین</h4>
+              <p class="text-xs text-slate-500 mt-1">تیم‌های پشتیبان و بازرسی سرزده شبانه آماده استقرار سریع در قطب‌های صنعتی و مناطق ۱ تا ۵ و ۲۲ تهران:</p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <a href="areas/shamsabad-industrial-security/" class="inline-flex items-center gap-1 bg-slatebg hover:bg-navy hover:text-white text-navy font-bold text-xs px-3 py-2 rounded-xl border border-slate-300 transition">🏭 شهرک صنعتی شمس‌آباد</a>
+              <a href="areas/simindasht-karaj-security/" class="inline-flex items-center gap-1 bg-slatebg hover:bg-navy hover:text-white text-navy font-bold text-xs px-3 py-2 rounded-xl border border-slate-300 transition">⚙️ سیمین‌دشت و جاده مخصوص</a>
+              <a href="areas/chahardangeh-fath-security/" class="inline-flex items-center gap-1 bg-slatebg hover:bg-navy hover:text-white text-navy font-bold text-xs px-3 py-2 rounded-xl border border-slate-300 transition">🚛 چهاردانگه، عباس‌آباد و فتح</a>
+              <a href="areas/saadatabad-shahrak-gharb-lobbyman/" class="inline-flex items-center gap-1 bg-slatebg hover:bg-navy hover:text-white text-navy font-bold text-xs px-3 py-2 rounded-xl border border-slate-300 transition">🏢 لابی‌من سعادت‌آباد، شهرک غرب و نیاوران</a>
+              <a href="areas/district-22-chitgar-security/" class="inline-flex items-center gap-1 bg-slatebg hover:bg-navy hover:text-white text-navy font-bold text-xs px-3 py-2 rounded-xl border border-slate-300 transition">🌆 برج‌های منطقه ۲۲ و چیتگر</a>
             </div>
           </div>
         </div>
@@ -1044,18 +1452,22 @@
             <!-- گام ۱: نوع مکان -->
             <div>
               <label class="block text-sm font-extrabold text-navy mb-3">۱. نوع مجموعه یا محل استقرار را انتخاب کنید:</label>
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" role="radiogroup" aria-label="نوع مکان">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" role="radiogroup" aria-label="نوع مکان">
                 <button type="button" data-est-place="tower" class="est-place-btn p-3.5 rounded-2xl border-2 border-cta-blue bg-white text-navy font-bold text-sm text-right shadow-sm transition">
                   <div class="text-base mb-1">🏢 برج مسکونی / اداری</div>
                   <div class="text-[11px] text-slate-500 font-normal">لابی‌من، کنترل تردد و مشاعات</div>
                 </button>
                 <button type="button" data-est-place="factory" class="est-place-btn p-3.5 rounded-2xl border-2 border-slate-200 bg-white/70 hover:bg-white text-slate-700 font-bold text-sm text-right transition">
                   <div class="text-base mb-1">🏭 کارخانه / انبار صنعتی</div>
-                  <div class="text-[11px] text-slate-500 font-normal">انتظامات گیت، باسکول و گشت</div>
+                  <div class="text-[11px] text-slate-500 font-normal">انتظامات گیت، باسکول و گشت RFID</div>
                 </button>
                 <button type="button" data-est-place="site" class="est-place-btn p-3.5 rounded-2xl border-2 border-slate-200 bg-white/70 hover:bg-white text-slate-700 font-bold text-sm text-right transition">
                   <div class="text-base mb-1">🏗️ کارگاه / پروژه ساختمانی</div>
-                  <div class="text-[11px] text-slate-500 font-normal">حفاظت مصالح و تجهیزات</div>
+                  <div class="text-[11px] text-slate-500 font-normal">حفاظت مصالح، ابزارآلات و بیمه ماده ۶۶</div>
+                </button>
+                <button type="button" data-est-place="commercial" class="est-place-btn p-3.5 rounded-2xl border-2 border-slate-200 bg-white/70 hover:bg-white text-slate-700 font-bold text-sm text-right transition">
+                  <div class="text-base mb-1">🏥 مرکز تجاری / بیمارستان / سازمان</div>
+                  <div class="text-[11px] text-slate-500 font-normal">انتظامات مال، درمانگاه، سازمان و همایش</div>
                 </button>
               </div>
             </div>
@@ -1065,9 +1477,9 @@
               <div class="flex flex-wrap items-center justify-between gap-2.5 mb-2.5">
                 <label for="est-shift-range" class="text-sm font-extrabold text-navy">۲. تعداد پست نگهبانی همزمان (۱ تا ۱۰ پست):</label>
                 <div class="flex items-center gap-2">
-                  <button type="button" id="btn-shift-dec" class="min-w-[44px] min-h-[44px] w-11 h-11 rounded-xl bg-white border border-slate-300 text-navy text-lg font-black hover:bg-slate-100 active:scale-95 transition flex items-center justify-center shadow-xs" aria-label="کاهش تعداد پست">-</button>
+                  <button type="button" id="btn-shift-dec" class="min-w-[44px] min-h-[44px] w-11 h-11 rounded-xl bg-white border border-slate-300 text-navy text-lg font-black hover:bg-slate-100 active:scale-95 transition flex items-center justify-center shadow-sm" aria-label="کاهش تعداد پست">-</button>
                   <span id="est-shift-badge" class="min-w-[80px] min-h-[44px] h-11 flex items-center justify-center text-center bg-navy text-white text-sm font-black px-3.5 py-1 rounded-xl">۱ پست</span>
-                  <button type="button" id="btn-shift-inc" class="min-w-[44px] min-h-[44px] w-11 h-11 rounded-xl bg-white border border-slate-300 text-navy text-lg font-black hover:bg-slate-100 active:scale-95 transition flex items-center justify-center shadow-xs" aria-label="افزایش تعداد پست">+</button>
+                  <button type="button" id="btn-shift-inc" class="min-w-[44px] min-h-[44px] w-11 h-11 rounded-xl bg-white border border-slate-300 text-navy text-lg font-black hover:bg-slate-100 active:scale-95 transition flex items-center justify-center shadow-sm" aria-label="افزایش تعداد پست">+</button>
                 </div>
               </div>
               <input id="est-shift-range" type="range" min="1" max="10" value="1" class="w-full h-2 bg-slate-300 rounded-lg cursor-pointer" />
@@ -1112,9 +1524,9 @@
 
             <!-- جدول مرجع ارقام پایه قانون کار ۱۴۰۵ -->
             <div class="bg-blue-50/70 border border-blue-200 rounded-2xl p-4 text-xs text-slate-700 space-y-1.5">
-              <div class="font-bold text-navy flex items-center justify-between">
+              <div class="font-bold text-navy flex flex-wrap items-center justify-between gap-2">
                 <span>مبنای قانونی محاسبات (مصوبه شورای عالی کار - سال ۱۴۰۵):</span>
-                <a href="https://jooiakar.com/blog/careers/guard/income/" target="_blank" rel="noopener noreferrer" class="text-cta-blue underline">مشاهده منبع جدول ۱۴۰۵</a>
+                <a href="knowledge/security-guard-salary-1405/" class="text-cta-blue hover:text-cta-blueHover underline">مشاهده راهنمای کامل حقوق و شیفت ۱۴۰۵ ←</a>
               </div>
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 pt-1">
                 <div>مزد پایه ۳۰ روز: <strong class="text-navy">۱۶٬۶۲۵٬۵۵۰ تومان</strong></div>
@@ -1204,10 +1616,20 @@
               </button>
             </form>
 
-            <!-- دکمه مشاهده مستقیم چک‌لیست -->
-            <div class="text-center pt-1">
-              <button type="button" id="btn-preview-checklist" class="text-xs text-slate-300 hover:text-white underline decoration-dotted">
-                پیش‌نمایش چک‌لیست «۱۰ نکته حقوقی قرارداد نگهبانی»
+            <!-- مسیر جایگزین برای مدیرانی که تماس مستقیم یا واتساپ را ترجیح می‌دهند -->
+            <div class="pt-3 border-t border-white/15 text-center space-y-2.5">
+              <div class="text-[11px] text-slate-300">ترجیح می‌دهید بدون ثبت فرم، مستقیم استعلام بگیرید؟</div>
+              <div class="flex flex-wrap items-center justify-center gap-2">
+                <a id="estimator-direct-call" data-phone-link href="tel:02144289000" class="inline-flex items-center gap-1.5 bg-white/10 hover:bg-white/20 text-white text-xs font-bold px-3.5 py-2.5 rounded-xl transition">
+                  <span>📞 تماس مستقیم:</span>
+                  <span data-phone-text dir="ltr">۰۲۱-۴۴۲۸۹۰۰۰</span>
+                </a>
+                <a id="estimator-direct-wa" data-wa="سلام، پس از بررسی برآوردگر شیفت ۱۴۰۵ جهت دریافت پیش‌فاکتور دقیق پیام می‌دهم." href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-3.5 py-2.5 rounded-xl transition">
+                  <span>💬 استعلام فوری واتساپ</span>
+                </a>
+              </div>
+              <button type="button" id="btn-preview-checklist" class="text-[11px] text-slate-300 hover:text-white underline decoration-dotted">
+                پیش‌نمایش سرفصل‌های چک‌لیست «۱۰ نکته حقوقی قرارداد نگهبانی»
               </button>
             </div>
           </div>
@@ -1255,9 +1677,9 @@
                 <span class="w-12 h-12 rounded-2xl bg-navy text-cta-gold font-black text-xl flex items-center justify-center shadow">۲</span>
                 <span class="text-xs font-bold text-slate-400">گام دوم (رایگان)</span>
               </div>
-              <h3 class="text-lg font-extrabold text-navy mb-2">بازدید فنی رایگان از محل</h3>
+              <h3 class="text-lg font-extrabold text-navy mb-2">بازدید فنی رایگان توسط فرمانده بازنشسته</h3>
               <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                حضور کارشناس ارشد حفاظتی در محل برج، کارخانه یا کارگاه؛ شناسایی نقاط کور، ارزیابی اتاق نگهبانی طبق پیوست مبحث ۴ و تدوین دستورالعمل پست.
+                حضور کارشناس ارشد و فرمانده بازنشسته انتظامی در محل برج، کارخانه یا کارگاه؛ ممیزی نقاط کور، انطباق اتاق نگهبانی با پیوست مبحث ۴ و ارزیابی ریسک ماده ۶۶.
               </p>
             </div>
             <div class="mt-4 pt-3 border-t border-slate-100 text-xs font-bold text-emerald-700">
@@ -1372,8 +1794,8 @@
             <div>
               <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
                 <div>
-                  <h3 class="text-base sm:text-lg font-extrabold text-navy">استاندارد پوشش و لباس فرم سازمانی</h3>
-                  <p class="text-xs text-slate-500">پوشش متمایز، رسمی و آراسته بدون استفاده از علائم نظامی یا انتظامی</p>
+                  <h3 class="text-base sm:text-lg font-extrabold text-navy">استاندارد پوشش، یونیفرم مصوب و تجهیزات مجاز</h3>
+                  <p class="text-xs text-slate-500">یونیفرم رسمی تاییدشده مرکز انتظام فراجا (ماده ۱۲۲) و فرم تشریفاتی لابی‌من</p>
                 </div>
                 <div class="inline-flex rounded-xl bg-white p-1 border border-slate-200">
                   <button type="button" data-uniform-tab="lobby" class="uniform-tab-btn bg-navy text-white text-xs font-bold px-3 py-1.5 rounded-lg transition">
@@ -1385,48 +1807,36 @@
                 </div>
               </div>
 
-              <!-- پنل لباس فرم لابی‌من -->
+              <!-- پنل لباس فرم لابی‌من (با عکس واقعی) -->
               <div id="uniform-panel-lobby" class="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200 grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
-                <div class="sm:col-span-4 flex flex-col items-center justify-center bg-slatebg rounded-xl p-4 border border-slate-200/80">
-                  <!-- تصویر برداری کت و شلوار تشریفاتی لابی‌من -->
-                  <svg class="w-20 h-20 text-navy" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M20 14L10 22V54H26V36H38V54H54V22L44 14L32 26L20 14Z" fill="#1B365D"/>
-                    <path d="M26 14L32 26L38 14H26Z" fill="#F4F7FA"/>
-                    <path d="M31 18L30 28L32 31L34 28L33 18H31Z" fill="#C59B27"/>
-                    <rect x="37" y="25" width="7" height="3" rx="1" fill="#C59B27"/>
-                  </svg>
-                  <span class="text-xs font-bold text-navy mt-2">تیپ الف: تشریفات برج و اداری</span>
+                <div class="sm:col-span-4 flex flex-col items-center justify-center bg-slatebg rounded-xl overflow-hidden border border-slate-200/80">
+                  <img src="assets/img/photos/luxury-tower-concierge-uniform.webp" alt="لباس فرم واقعی لابی‌من و افسر حفاظتی در برج مسکونی لوکس" width="720" height="960" loading="lazy" decoding="async" class="w-full h-44 object-cover object-top" />
+                  <span class="text-[11px] font-bold text-navy py-2 px-2 text-center">تیپ الف: تشریفات برج و مجتمع</span>
                 </div>
                 <div class="sm:col-span-8 space-y-2 text-xs sm:text-sm">
                   <div class="font-extrabold text-navy">مشخصات لباس فرم لابی‌من و پذیرش برج‌ها:</div>
                   <ul class="space-y-1.5 text-slate-600 list-disc list-inside">
-                    <li>کت و شلوار فاستونی سرمه‌ای تیره با دوخت سفارشی و اتوکشی روزانه</li>
-                    <li>پیراهن سفید یا آبی آسمانی، کراوات سازمانی و بج سینه فلزی «دیدبان امین توانا»</li>
-                    <li>کارت شناسایی عکس‌دار هولوگرام‌دار با کد رهگیری اختصاصی پرسنل</li>
-                    <li>تجهیز به دفتر ثبت وقایع چرمی، چراغ قوه اضطراری و هندزفری ارتباط داخلی</li>
+                    <li>لباس فرم تشریفاتی (کت‌وشلوار سرمه‌ای یا یونیفرم مصوب سفید/مشکی) تحت استاندارد سرهنگ ملکوتی‌خواه</li>
+                    <li>بج سینه فلزی و کارت شناسایی عکس‌دار هولوگرام‌دار با کد رهگیری پرسنل</li>
+                    <li>آداب معاشرت تشریفاتی، تکریم ساکنین و مدیریت حرفه‌ای مهمانان و مرسولات</li>
+                    <li>تجهیز به دفتر ثبت وقایع، چراغ قوه اضطراری و هندزفری/بی‌سیم ارتباط داخلی</li>
                   </ul>
                 </div>
               </div>
 
-              <!-- پنل لباس فرم حراست صنعتی -->
+              <!-- پنل لباس فرم حراست صنعتی (با عکس واقعی) -->
               <div id="uniform-panel-industrial" class="hidden bg-white rounded-2xl p-4 sm:p-5 border border-slate-200 grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
-                <div class="sm:col-span-4 flex flex-col items-center justify-center bg-slatebg rounded-xl p-4 border border-slate-200/80">
-                  <svg class="w-20 h-20 text-navy" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M16 14L8 24V52H56V24L48 14H16Z" fill="#26497A"/>
-                    <rect x="14" y="34" width="36" height="4" fill="#C59B27"/>
-                    <rect x="14" y="42" width="36" height="4" fill="#C59B27"/>
-                    <rect x="20" y="22" width="8" height="6" rx="1" stroke="#FFFFFF" stroke-width="1.5"/>
-                    <rect x="36" y="22" width="8" height="6" rx="1" stroke="#FFFFFF" stroke-width="1.5"/>
-                  </svg>
-                  <span class="text-xs font-bold text-navy mt-2">تیپ ب: انتظامات صنعتی و کارگاه</span>
+                <div class="sm:col-span-4 flex flex-col items-center justify-center bg-slatebg rounded-xl overflow-hidden border border-slate-200/80">
+                  <img src="assets/img/photos/industrial-plant-gate-security.webp" alt="لباس فرم مصوب مرکز انتظام فراجا در گیت کارخانه صنعتی" width="960" height="720" loading="lazy" decoding="async" class="w-full h-44 object-cover object-top" />
+                  <span class="text-[11px] font-bold text-navy py-2 px-2 text-center">تیپ ب: انتظامات صنعتی و کارگاه</span>
                 </div>
                 <div class="sm:col-span-8 space-y-2 text-xs sm:text-sm">
                   <div class="font-extrabold text-navy">مشخصات لباس فرم نگهبان کارخانه و پروژه عمرانی:</div>
                   <ul class="space-y-1.5 text-slate-600 list-disc list-inside">
-                    <li>پیراهن و شلوار کتان صنعتی مقاوم به همراه اورکت چهارفصل ضدآب ویژه گشت شبانه</li>
+                    <li>یونیفرم رسمی پلیس‌یار مصوب مرکز انتظام پلیس پیشگیری فراجا به همراه اورکت چهارفصل گشت شبانه</li>
                     <li>جلیقه شبرنگ استاندارد HSE، کفش ایمنی سرپنجه فولادی و کلاه ایمنی در کارگاه‌ها</li>
-                    <li>مجهز به قلم نوری ثبت تگ گشت‌زنی (Guard Tour)، سوت، چراغ قوه پلیسی دوربرد و بی‌سیم مجاز</li>
-                    <li>فاقد هرگونه اتیکت یا درجه شبیه به نهادهای نظامی (کاملاً منطبق با دستورالعمل مرکز انتظام)</li>
+                    <li>مجهز به قلم ثبت تگ گشت‌زنی (RFID Guard Tour)، چراغ قوه دوربرد و بی‌سیم مجاز</li>
+                    <li>تجهیزات دفاع شخصی غیرکشنده مجاز (با مجوز و آموزش رسمی مرکز انتظام در پست‌های مصوب)</li>
                   </ul>
                 </div>
               </div>
@@ -1478,11 +1888,132 @@
                 کارفرمایان درباره حذف ریسک اداره کار، نظم شیفت‌ها و سرعت جایگزینی نیرو چه می‌گویند؟
               </p>
             </div>
+            <div class="flex flex-wrap items-center gap-2">
+              <a data-map-link="google" href="https://maps.google.com/?q=35.7667,51.3333" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 bg-white hover:bg-navy hover:text-white text-navy text-xs font-bold px-3.5 py-2 rounded-xl border border-slate-300 transition">
+                📍 مشاهده دفتر در گوگل‌مپ ↗
+              </a>
+              <a data-map-link="neshan" href="#" target="_blank" rel="noopener noreferrer" class="hidden inline-flex items-center gap-1.5 bg-white hover:bg-navy hover:text-white text-navy text-xs font-bold px-3.5 py-2 rounded-xl border border-slate-300 transition">
+                📍 پروفایل نشان ↗
+              </a>
+              <a data-map-link="balad" href="#" target="_blank" rel="noopener noreferrer" class="hidden inline-flex items-center gap-1.5 bg-white hover:bg-navy hover:text-white text-navy text-xs font-bold px-3.5 py-2 rounded-xl border border-slate-300 transition">
+                📍 پروفایل بلد ↗
+              </a>
+            </div>
           </div>
 
           <div id="reviews-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <!-- کارت‌های نظرات توسط جاوااسکریپت رندر می‌شوند تا هم در حالت عادی و هم در حالت ویرایش قابل تغییر باشند -->
           </div>
+        </div>
+
+        <!-- بنر همکاری تجاری، نمایندگی معرفی و طرح قدردانی مشتریان فعلی (کانال‌های ۱، ۳، ۴، ۶، ۱۳) -->
+        <div class="bg-gradient-to-l from-navy to-navy-dark text-white rounded-3xl p-6 sm:p-8 shadow-elevated border border-cta-gold/30 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+          <div class="space-y-2 max-w-2xl">
+            <span class="inline-block bg-cta-gold/20 text-amber-300 border border-cta-gold/40 text-xs font-extrabold px-3 py-1 rounded-full">
+              🤝 باشگاه شرکای تجاری و طرح معرفی B2B (با تفاهم‌نامه رسمی)
+            </span>
+            <h3 class="text-xl sm:text-2xl font-black">
+              شرکت تأسیسات، آسانسور، نظافت، نصاب دوربین مداربسته، سازنده یا مشاور املاک هستید؟
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+              پکیج کامل ساختمان و کارخانه را بدون دغدغه نیروی انسانی به کارفرمایان خود ارائه دهید و از <strong class="text-amber-300">پورسانت شفاف قراردادی + معرفی متقابل مشتریان</strong> بهره‌مند شوید. مدیران فعلی نیز بابت هر معرفی موفق، معادل <strong class="text-white">۱ ماه حق مدیریت</strong> تخفیف دریافت می‌کنند.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-3 shrink-0 w-full lg:w-auto">
+            <a href="partners/" class="flex-1 lg:flex-initial bg-cta-gold hover:bg-amber-500 text-navy-dark font-black text-sm px-6 py-3.5 rounded-xl text-center shadow-lg transition">
+              مشاهده مدل پورسانت و ثبت شراکت ←
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ۷.۵ پایگاه دانش حقوقی و اعتمادسازی B2B (SEO Content Silo) -->
+    <section id="knowledge-hub" class="py-16 sm:py-20 bg-white border-t border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+          <div class="max-w-2xl">
+            <span class="inline-block bg-amber-100 text-amber-900 border border-amber-200 text-xs font-bold px-3.5 py-1 rounded-full mb-3">
+              پایگاه دانش حقوقی، قانون کار ۱۴۰۵ و ضوابط حفاظتی
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-black text-navy">
+              مرجع تصمیم‌گیری حقوقی برای مدیران برج‌ها، کارخانه‌ها و سازندگان
+            </h2>
+            <p class="text-slate-600 text-sm sm:text-base mt-2">
+              پیش از امضای هر قرارداد نگهبانی، جداول مصوب ۱۴۰۵، الزامات پیوست مبحث ۴ و ریسک ماده ۶۶ تأمین اجتماعی را با مستندات قانونی بررسی کنید.
+            </p>
+          </div>
+          <a href="knowledge/" class="inline-flex items-center gap-2 bg-navy hover:bg-navy-light text-white font-bold text-xs sm:text-sm px-5 py-3 rounded-xl transition shrink-0 self-start md:self-auto">
+            <span>مشاهده همه مقالات پایگاه دانش</span>
+            <span>←</span>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <a href="knowledge/security-guard-salary-1405/" class="group bg-slatebg hover:bg-white rounded-2xl p-5 border border-slate-200 hover:border-cta-blue hover:shadow-corporate transition flex flex-col justify-between gap-3">
+            <div>
+              <span class="inline-block bg-blue-100 text-cta-blue text-[11px] font-bold px-2.5 py-1 rounded-lg">جدول رسمی ۱۴۰۵</span>
+              <h3 class="text-base font-black text-navy group-hover:text-cta-blue transition mt-3 leading-snug">
+                راهنمای محاسبه شیفت نگهبانی ۲۴-۴۸ و ۱۲-۱۲ بر اساس قانون کار ۱۴۰۵
+              </h3>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                ریز حقوق پایه، شب‌کاری ۳۵٪، نوبت‌کاری، اضافه‌کاری، ۲۳٪ بیمه کارفرما و مقایسه هزینه استخدام مستقیم با قرارداد شرکتی.
+              </p>
+            </div>
+            <span class="text-xs font-extrabold text-cta-blue">مشاهده جدول و فرمول محاسبه ←</span>
+          </a>
+
+          <a href="knowledge/building-code-topic-4-guard-room/" class="group bg-slatebg hover:bg-white rounded-2xl p-5 border border-slate-200 hover:border-cta-blue hover:shadow-corporate transition flex flex-col justify-between gap-3">
+            <div>
+              <span class="inline-block bg-emerald-100 text-emerald-800 text-[11px] font-bold px-2.5 py-1 rounded-lg">پیوست مبحث ۴ ساختمان</span>
+              <h3 class="text-base font-black text-navy group-hover:text-cta-blue transition mt-3 leading-snug">
+                تفسیر ضوابط حفاظتی مبحث ۴؛ استاندارد اتاق نگهبانی و تفاوت با سرایداری
+              </h3>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                الزام بند پ-۹-۵-۳ درباره دید مستقیم به ورودی‌ها و دلیل حقوقی جلوگیری از اسکان سرایدار در مشاعات برج‌ها.
+              </p>
+            </div>
+            <span class="text-xs font-extrabold text-cta-blue">مطالعه استاندارد مبحث ۴ ←</span>
+          </a>
+
+          <a href="knowledge/article-66-social-security-liability/" class="group bg-slatebg hover:bg-white rounded-2xl p-5 border border-slate-200 hover:border-cta-blue hover:shadow-corporate transition flex flex-col justify-between gap-3">
+            <div>
+              <span class="inline-block bg-red-100 text-red-800 text-[11px] font-bold px-2.5 py-1 rounded-lg">هشدار ماده ۶۶</span>
+              <h3 class="text-base font-black text-navy group-hover:text-cta-blue transition mt-3 leading-snug">
+                آیا مدیر ساختمان مسئول فوت یا نقص عضو نگهبان در شیفت شب است؟
+              </h3>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                بررسی دیه و مستمری مادام‌العمر سازمان تأمین اجتماعی در حوادث شیفت شب و راهکار سلب ۱۰۰٪ مسئولیت مدیران.
+              </p>
+            </div>
+            <span class="text-xs font-extrabold text-cta-blue">بررسی مسئولیت ماده ۶۶ ←</span>
+          </a>
+
+          <a href="knowledge/security-contract-template-checklist/" class="group bg-slatebg hover:bg-white rounded-2xl p-5 border border-slate-200 hover:border-cta-blue hover:shadow-corporate transition flex flex-col justify-between gap-3">
+            <div>
+              <span class="inline-block bg-amber-100 text-amber-900 text-[11px] font-bold px-2.5 py-1 rounded-lg">نمونه قرارداد + PDF</span>
+              <h3 class="text-base font-black text-navy group-hover:text-cta-blue transition mt-3 leading-snug">
+                نمونه متن قرارداد پیمانکاری نگهبانی و لابی‌من + چک‌لیست ۱۰ نکته حقوقی
+              </h3>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                بندهای طلایی سلب رابطه کارگری، تعهد جایگزینی زیر ۴ ساعت، تعویض ۴۸ ساعته، تضامین خسارت و نسخه قابل چاپ PDF.
+              </p>
+            </div>
+            <span class="text-xs font-extrabold text-cta-blue">مشاهده و چاپ چک‌لیست حقوقی ←</span>
+          </a>
+
+          <a href="knowledge/risks-of-unlicensed-foreign-guards/" class="group bg-slatebg hover:bg-white rounded-2xl p-5 border border-slate-200 hover:border-cta-blue hover:shadow-corporate transition flex flex-col justify-between gap-3 md:col-span-2 lg:col-span-2">
+            <div>
+              <span class="inline-block bg-slate-200 text-navy text-[11px] font-bold px-2.5 py-1 rounded-lg">مواد ۱۲۰ و ۱۸۱ قانون کار</span>
+              <h3 class="text-base font-black text-navy group-hover:text-cta-blue transition mt-3 leading-snug">
+                خطرات پنهان حقوقی، کیفری و مالی استخدام نگهبان غیرمجاز یا اتباع بدون مجوز برای مدیران پروژه و کارخانه
+              </h3>
+              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                جریمه روزشمار ۵ برابر حداقل مزد، نبود پوشش بیمه در حوادث کارگاهی، ریسک سرقت کابل و مصالح ساختمانی و نحوه جایگزینی فوری ۲۴ تا ۴۸ ساعته با نیروهای گزینش‌شده ایرانی.
+              </p>
+            </div>
+            <span class="text-xs font-extrabold text-cta-blue">مشاهده تحلیل کامل ریسک‌ها و راهکار جایگزینی ←</span>
+          </a>
         </div>
       </div>
     </section>
@@ -1615,19 +2146,27 @@
           </div>
         </div>
 
-        <!-- ستون ۲: دسترسی سریع و منابع مستند -->
+        <!-- ستون ۲: دسترسی سریع، خدمات، مناطق و منابع مستند -->
         <div class="lg:col-span-3 space-y-2.5 text-xs sm:text-sm">
-          <div class="text-white font-extrabold text-sm mb-3">دسترسی سریع و منابع قانونی</div>
+          <div class="text-white font-extrabold text-sm mb-3">خدمات، مناطق پوشش و منابع رسمی</div>
           <ul class="space-y-2">
             <li><a href="services/lobby-man-residential-towers/" class="hover:text-white transition">خدمات لابی‌من برج‌ها و مجتمع‌ها</a></li>
             <li><a href="services/industrial-plant-security/" class="hover:text-white transition">حفاظت فیزیکی کارخانه‌ها و انبارها</a></li>
             <li><a href="services/construction-site-guarding/" class="hover:text-white transition">نگهبانی کارگاه و پروژه‌های ساختمانی</a></li>
             <li><a href="services/commercial-complex-security/" class="hover:text-white transition">حراست مجتمع‌های تجاری و مال‌ها</a></li>
             <li><a href="services/residential-compound-security/" class="hover:text-white transition">حفاظت شهرک‌های ویلایی و مسکونی</a></li>
-            <li><a href="#shift-estimator" class="hover:text-white transition">برآوردگر آنلاین شیفت و دستمزد ۱۴۰۵</a></li>
-            <li><a href="https://rasmio.com/company/14012107817/%D8%AF%DB%8C%D8%AF%D8%A8%D8%A7%D9%86%20%D8%A7%D9%85%DB%8C%D9%86%20%D8%AA%D9%88%D8%A7%D9%86%D8%A7/" target="_blank" rel="noopener noreferrer" class="text-amber-300 hover:underline">آگهی روزنامه رسمی دیدبان امین توانا (رسمیو) ↗</a></li>
+            <li><a href="services/armed-escort-event-security/" class="hover:text-white transition">حفاظت سازمان‌ها، بیمارستان‌ها و همایش‌ها</a></li>
+            <li class="pt-1 border-t border-white/10"><a href="areas/shamsabad-industrial-security/" class="hover:text-white transition">نگهبانی شهرک صنعتی شمس‌آباد</a></li>
+            <li><a href="areas/simindasht-karaj-security/" class="hover:text-white transition">حراست سیمین‌دشت و جاده مخصوص</a></li>
+            <li><a href="areas/chahardangeh-fath-security/" class="hover:text-white transition">انتظامات چهاردانگه، عباس‌آباد و محور فتح</a></li>
+            <li><a href="areas/saadatabad-shahrak-gharb-lobbyman/" class="hover:text-white transition">لابی‌من سعادت‌آباد، شهرک غرب و نیاوران</a></li>
+            <li><a href="areas/district-22-chitgar-security/" class="hover:text-white transition">لابی‌من برج‌های منطقه ۲۲ و چیتگر</a></li>
+            <li class="pt-1 border-t border-white/10"><a href="knowledge/" class="text-blue-300 font-bold hover:underline">📚 پایگاه دانش حقوقی و قانون کار ۱۴۰۵</a></li>
+            <li><a href="knowledge/security-contract-template-checklist/" class="hover:text-white transition">نمونه قرارداد نگهبانی و چک‌لیست ۱۰ نکته</a></li>
+            <li><a href="resume/" class="text-amber-300 font-bold hover:underline">📄 رزومه رسمی و کارنامه اجرایی (PDF)</a></li>
+            <li><a href="partners/" class="text-emerald-300 font-bold hover:underline">🤝 همکاری تجاری و نمایندگی معرفی</a></li>
+            <li><a href="https://rasmio.com/company/14012107817/%D8%AF%DB%8C%D8%AF%D8%A8%D8%A7%D9%86%20%D8%A7%D9%85%DB%8C%D9%86%20%D8%AA%D9%88%D8%A7%D9%86%D8%A7/" target="_blank" rel="noopener noreferrer" class="text-amber-300 hover:underline">استعلام روزنامه رسمی در رسمیو ↗</a></li>
             <li><a href="https://qavanin.ir/Law/TreeText/?IDS=4913293355225052714" target="_blank" rel="noopener noreferrer" class="hover:text-white underline decoration-dotted">متن آیین‌نامه اجرایی ماده ۱۲۲ مرکز انتظام ↗</a></li>
-            <li><a href="https://hamyarnazer.com/%D8%B6%D9%88%D8%A7%D8%A8%D8%B7-%D8%AD%D9%81%D8%A7%D8%B8%D8%AA%DB%8C-%D8%A7%D9%86%D8%AA%D8%B8%D8%A7%D9%85%DB%8C-%D8%B3%D8%A7%D8%AE%D8%AA%D9%85%D8%A7%D9%86-%D9%87%D8%A7-%D9%BE%DB%8C%D9%88/" target="_blank" rel="noopener noreferrer" class="hover:text-white underline decoration-dotted">پیوست حفاظتی مبحث ۴ مقررات ملی ساختمان ↗</a></li>
           </ul>
         </div>
 
@@ -1652,6 +2191,13 @@
             <p>
               <strong class="text-white">کد پستی:</strong> ۱۴۷۶۸۹۳۸۴۱ | <strong class="text-white">ثبت:</strong> ۵۵۳۵۶
             </p>
+            <div class="pt-2 flex flex-wrap gap-2">
+              <a data-map-link="google" href="https://maps.google.com/?q=35.7667,51.3333" target="_blank" rel="noopener noreferrer" class="bg-white/10 hover:bg-white/20 text-white text-[11px] font-bold px-2.5 py-1.5 rounded-lg transition">گوگل‌مپ ↗</a>
+              <a data-map-link="neshan" href="#" target="_blank" rel="noopener noreferrer" class="hidden bg-white/10 hover:bg-white/20 text-white text-[11px] font-bold px-2.5 py-1.5 rounded-lg transition">نشان ↗</a>
+              <a data-map-link="balad" href="#" target="_blank" rel="noopener noreferrer" class="hidden bg-white/10 hover:bg-white/20 text-white text-[11px] font-bold px-2.5 py-1.5 rounded-lg transition">بلد ↗</a>
+              <a data-social-link="linkedin" href="#" target="_blank" rel="noopener noreferrer" class="hidden bg-white/10 hover:bg-white/20 text-blue-300 text-[11px] font-bold px-2.5 py-1.5 rounded-lg transition">لینکدین ↗</a>
+              <a data-social-link="instagram" href="#" target="_blank" rel="noopener noreferrer" class="hidden bg-white/10 hover:bg-white/20 text-pink-300 text-[11px] font-bold px-2.5 py-1.5 rounded-lg transition">اینستاگرام ↗</a>
+            </div>
           </div>
         </div>
 
@@ -1682,7 +2228,7 @@
   </footer>
 
   <!-- دکمه شناور واتساپ در گوشه پایین صفحه (مخصوص تبلت و دسکتاپ - در موبایل دکمه در نوار زیرین تعبیه شده) -->
-  <a id="floating-whatsapp-btn" data-wa="سلام، جهت مشاوره و بازدید رایگان حفاظتی پیام می‌دهم." href="#" target="_blank" rel="noopener noreferrer" aria-label="گفتگوی مستقیم در واتساپ" class="no-print fixed bottom-6 left-5 z-40 bg-emerald-600 hover:bg-emerald-500 text-white rounded-full p-3.5 sm:px-5 sm:py-3.5 shadow-2xl hidden sm:flex items-center gap-2.5 border-2 border-white transition transform hover:scale-105 active:scale-95">
+  <a id="floating-whatsapp-btn" data-wa="سلام، جهت مشاوره و بازدید رایگان حفاظتی پیام می‌دهم." data-wa-desktop="true" href="#" target="_blank" rel="noopener noreferrer" aria-label="گفتگوی مستقیم در واتساپ" class="no-print fixed bottom-6 left-5 z-40 bg-emerald-600 hover:bg-emerald-500 text-white rounded-full p-3.5 sm:px-5 sm:py-3.5 shadow-2xl hidden sm:flex items-center gap-2.5 border-2 border-white transition transform hover:scale-105 active:scale-95">
     <svg class="w-6 h-6 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.625.846 5.059 2.284 7.033l-1.492 5.447 5.601-1.469c1.912 1.044 4.101 1.639 6.431 1.639 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
     <span class="font-extrabold text-xs">مشاوره مستقیم در واتساپ</span>
   </a>
@@ -1709,11 +2255,11 @@
       <button type="button" id="btn-close-visit-modal" class="min-w-[44px] min-h-[44px] w-11 h-11 rounded-full bg-slate-100 hover:bg-slate-200 active:bg-slate-300 text-slate-600 flex items-center justify-center text-lg absolute top-4 left-4 transition" aria-label="بستن پنجره">✕</button>
 
       <div class="inline-block bg-blue-50 text-cta-blue text-xs font-bold px-3 py-1 rounded-full mb-2">
-        گام اول همکاری — کاملاً رایگان و بدون تعهد
+        بازدید و ممیزی تخصصی توسط فرمانده بازنشسته انتظامی — کاملاً رایگان
       </div>
-      <h3 id="visit-modal-title" class="text-xl font-black text-navy">ثبت درخواست بازدید فنی و مشاوره رایگان</h3>
+      <h3 id="visit-modal-title" class="text-xl font-black text-navy">درخواست بازدید فنی، ممیزی نقاط کور و ریسک حقوقی</h3>
       <p class="text-xs sm:text-sm text-slate-600 mt-1">
-        کارشناسان مرکز انتظام دیدبان امین توانا جهت بررسی نقاط کور، ارزیابی پست‌ها و ارائه پیش‌فاکتور رسمی ۱۴۰۵ با شما هماهنگ خواهند کرد.
+        کارشناس ارشد و فرمانده بازنشسته دیدبان امین توانا نقاط کور امنیتی، انطباق با پیوست مبحث ۴ و ریسک حقوقی ماده ۶۶ مجموعه شما را به صورت رایگان ارزیابی و گزارش کتبی + پیش‌فاکتور رسمی ۱۴۰۵ ارائه می‌دهد.
       </p>
 
       <form id="visit-request-form" class="space-y-4 mt-5" novalidate>
@@ -1797,38 +2343,51 @@
             <strong class="text-navy block mb-0.5">۲. تصریح به عدم رابطه کارگری با کارفرما:</strong>
             در ماده تعهدات پیمانکار باید صراحتاً قید شود که کلیه پرسنل، کارگر پیمانکار محسوب شده و کارفرما هیچ مسئولیتی در قبال حقوق، بیمه و سنوات آن‌ها ندارد.
           </div>
-          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+          <div data-checklist-gated="true" class="p-3 rounded-xl bg-slate-50 border border-slate-200">
             <strong class="text-navy block mb-0.5">۳. شرط رؤیت لیست بیمه تأمین اجتماعی ماهانه:</strong>
             پرداخت صورت‌وضعیت ماهانه پیمانکار را منوط به ارائه تصویر لیست بیمه و فیش پرداختی ماه قبل پرسنل مستقر نمایید.
           </div>
-          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+          <div data-checklist-gated="true" class="p-3 rounded-xl bg-slate-50 border border-slate-200">
             <strong class="text-navy block mb-0.5">۴. تعیین SLA جایگزینی زیر ۴ ساعت:</strong>
             در قرارداد قید کنید که در صورت غیبت یا مرخصی هر نیرو، پیمانکار موظف به اعزام نیروی جایگزین ظرف حداکثر ۴ ساعت است و خلأ پست مشمول جریمه کسر کارکرد می‌شود.
           </div>
-          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+          <div data-checklist-gated="true" class="p-3 rounded-xl bg-slate-50 border border-slate-200">
             <strong class="text-navy block mb-0.5">۵. پوشش حوادث کارگاهی (ماده ۶۶ تأمین اجتماعی):</strong>
             پیمانکار باید دارای بیمه‌نامه مسئولیت مدنی کارفرما در قبال کارکنان باشد تا در صورت بروز حادثه یا فوت در شیفت، مسئولیتی متوجه مدیر ساختمان یا کارخانه نشود.
           </div>
-          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+          <div data-checklist-gated="true" class="p-3 rounded-xl bg-slate-50 border border-slate-200">
             <strong class="text-navy block mb-0.5">۶. سلب حق سکونت و تفکیک از سرایداری:</strong>
             استفاده از اتاق نگهبانی صرفاً جهت انجام وظیفه در ساعت شیفت است و هیچ‌گونه حق سکونت، اجاره یا تصرف در مشاعات (مطابق پیوست مبحث ۴ مقررات ملی) ایجاد نمی‌کند.
           </div>
-          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+          <div data-checklist-gated="true" class="p-3 rounded-xl bg-slate-50 border border-slate-200">
             <strong class="text-navy block mb-0.5">۷. پیوست صورت‌جلسه تحویل اموال و نقاط الحاقی:</strong>
             لیست کامل تجهیزات، کپسول‌های آتش‌نشانی، مانیتورها و اموال مشاع باید در روز اول صورت‌جلسه و ضمیمه قرارداد گردد تا مبنای مسئولیت خسارت مشخص باشد.
           </div>
-          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+          <div data-checklist-gated="true" class="p-3 rounded-xl bg-slate-50 border border-slate-200">
             <strong class="text-navy block mb-0.5">۸. پرونده پرسنلی ۵ برگی قبل از شروع شیفت:</strong>
             پیش از استقرار هر نگهبان، کپی گواهی عدم سوءپیشینه، تست عدم اعتیاد، کارت پایان خدمت/معافیت و معرفی‌نامه رسمی شرکت را دریافت و بایگانی کنید.
           </div>
-          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+          <div data-checklist-gated="true" class="p-3 rounded-xl bg-slate-50 border border-slate-200">
             <strong class="text-navy block mb-0.5">۹. حق تعویض بی‌قیدوشرط نیرو توسط کارفرما:</strong>
             کارفرما باید حق داشته باشد در صورت عدم رضایت از برخورد یا عملکرد هر نگهبان، با اعلام کتبی ظرف ۴۸ ساعت تعویض وی را از پیمانکار بخواهد.
           </div>
-          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200">
+          <div data-checklist-gated="true" class="p-3 rounded-xl bg-slate-50 border border-slate-200">
             <strong class="text-navy block mb-0.5">۱۰. الزام به بازرسی نامحسوس شبانه:</strong>
             پیمانکار باید متعهد به سرکشی نامحسوس بازرس شبانه و ارائه گزارش ثبت تگ‌های گشت‌زنی به مدیر مجموعه در پایان هر ماه باشد.
           </div>
+        </div>
+
+        <!-- قفل پیش‌نمایش برای کاربران بدون ثبت شماره -->
+        <div id="checklist-gate-overlay" class="hidden no-print bg-navy/5 border-2 border-dashed border-cta-gold/60 rounded-2xl p-5 text-center space-y-3">
+          <div class="text-sm font-black text-navy">
+            🔒 ۸ نکته حقوقی باقی‌مانده (شامل ماده ۶۶، پیوست مبحث ۴ و ضمانت سرقت) + پیش‌فاکتور دقیق ۱۴۰۵ قفل است
+          </div>
+          <p class="text-xs text-slate-600">
+            با ثبت شماره موبایل خود در برآوردگر، هر ۱۰ بند چک‌لیست حقوقی با قابلیت چاپ PDF و رقم دقیق پیش‌فاکتور رسمی بلافاصله باز می‌شود.
+          </p>
+          <button type="button" id="btn-unlock-checklist" class="bg-cta-gold hover:bg-amber-500 text-navy-dark font-black text-xs sm:text-sm px-6 py-3 rounded-xl shadow transition">
+            ثبت شماره موبایل و باز کردن کامل چک‌لیست + پیش‌فاکتور
+          </button>
         </div>
       </div>
     </div>
@@ -1859,7 +2418,7 @@
   </div>
 
   <!-- مدال خروج با انگیزه دانلود چک‌لیست (Exit-Intent) -->
-  <div id="exit-intent-modal" class="fixed inset-0 z-50 hidden bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 no-print" role="dialog" aria-modal="true">
+  <div id="exit-intent-modal" data-exit-owner="app" class="fixed inset-0 z-50 hidden bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 no-print" role="dialog" aria-modal="true">
     <div class="bg-white rounded-3xl max-w-md w-full p-5 sm:p-8 shadow-2xl border-2 border-cta-gold/50 relative text-center max-h-[90vh] overflow-y-auto">
       <button type="button" id="btn-close-exit-modal" class="absolute top-4 left-4 min-w-[44px] min-h-[44px] w-11 h-11 rounded-full bg-slate-100 hover:bg-slate-200 active:bg-slate-300 text-slate-500 flex items-center justify-center text-lg transition" aria-label="بستن">✕</button>
       

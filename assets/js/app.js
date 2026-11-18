@@ -7,14 +7,16 @@
         phoneDisplay: '۰۲۱-۴۴۲۸۹۰۰۰',
         phoneDial: '02144289000',
         estimator: {
-          place: 'tower', // tower | factory | site
+          place: 'tower', // tower | factory | site | commercial
           shifts: 1,
           hours: 24, // 8 | 12 | 24
           patrol: true,
           formal: true
         },
         estimatorGated: false,
+        checklistUnlocked: false,
         hasConverted: false,
+        activePersona: 'tower',
         reviews: (window.SITE_CONFIG && window.SITE_CONFIG.reviews) || []
       };
 
@@ -93,29 +95,62 @@
 
       // ۳. انتخابگر نقش کارفرما در بخش Hero
       var personaTips = {
-        tower: 'ویژه مدیران برج‌ها: تأمین لابی‌من ۲۴ ساعته با لباس فرم تشریفاتی، بدون ایجاد حق سکونت در مشاعات و حذف کامل شکایات سنوات از هیئت‌مدیره.',
-        factory: 'ویژه مدیران کارخانه‌ها: کنترل دقیق بارنامه و باسکول، گشت‌زنی پیرامونی با ثبت تگ RFID و صدور فاکتور رسمی معتبر با شناسه ملی ۱۴۰۱۲۱۰۷۸۱۷.',
-        hr: 'ویژه مدیران منابع انسانی و حراست: برون‌سپاری کامل تعهدات قانون کار ۱۴۰۵، بیمه تأمین اجتماعی، حوادث ماده ۶۶ و گزینش ۵ مرحله‌ای مرکز انتظام.',
-        construction: 'ویژه سازندگان پروژه‌های عمرانی: حفاظت شبانه‌روزی از کابل، میلگرد و ابزارآلات کارگاهی با پوشش کامل بیمه حوادث و تحویل فوری پست در پایان ساخت.'
+        tower: 'ویژه مدیران برج‌ها: تأمین لابی‌من ۲۴ ساعته با لباس فرم تشریفاتی تحت نظارت سرهنگ ملکوتی‌خواه (دارای مدرک مدیریت هتل و تشریفات)، بدون ایجاد حق سکونت در مشاعات و حذف کامل شکایات سنوات از هیئت‌مدیره.',
+        factory: 'ویژه مدیران کارخانه‌ها: کنترل دقیق بارنامه و باسکول، گشت‌زنی پیرامونی با تگ RFID (با سابقه حفاظت از کارخانه آذین تنه گروه ایران‌خودرو و نیروگاه قائم) و صدور فاکتور رسمی با شناسه ملی ۱۴۰۱۲۱۰۷۸۱۷.',
+        hr: 'ویژه مدیران منابع انسانی و حراست: برون‌سپاری کامل تعهدات قانون کار ۱۴۰۵، پشتیبانی وکیل پایه یک دادگستری در حوادث ماده ۶۶، گزینش ۵ مرحله‌ای مرکز انتظام و صدور «کارنامه کفایت آموزش» (سابقه آموزش فولاد یزد و مترو).',
+        construction: 'ویژه سازندگان پروژه‌های عمرانی: حفاظت شبانه‌روزی از کابل، میلگرد و ابزارآلات کارگاهی با سرکشی بازرس موتوری نیمه‌شب، پوشش کامل بیمه حوادث ماده ۶۶ و تبدیل به قرارداد لابی‌من پس از تحویل برج.'
+      };
+
+      var personaActions = {
+        tower: { label: 'مشاهده راهکار لابی‌من تشریفاتی و درخواست نمونه لباس فرم ←', href: 'services/lobby-man-residential-towers/' },
+        factory: { label: 'برآوردگر شیفت ۱۴۰۵ + ارزیابی نقاط کور کارخانه و RFID ←', href: 'services/industrial-plant-security/' },
+        hr: { label: 'دریافت چک‌لیست ۱۰ نکته حقوقی + نمونه قرارداد و کاتالوگ ←', href: 'knowledge/security-contract-template-checklist/' },
+        construction: { label: 'استعلام سریع استقرار ۲۴ تا ۴۸ ساعته و بیمه‌نامه کارگاه ←', href: 'services/construction-site-guarding/' }
       };
 
       var personaChips = document.querySelectorAll('.persona-chip');
       var personaTipEl = document.getElementById('persona-dynamic-tip');
-      var personaToService = { tower: 'residential', factory: 'industrial', hr: 'industrial', construction: 'construction' };
-      var personaToPlace = { tower: 'tower', factory: 'factory', hr: 'factory', construction: 'site' };
+      var personaActionEl = document.getElementById('persona-action-link');
+      var personaSyncBadge = document.getElementById('persona-sync-badge');
+      var personaScrollBtn = document.getElementById('persona-scroll-btn');
+      var personaToService = { tower: 'residential', factory: 'industrial', hr: 'commercial', construction: 'construction' };
+      var personaToPlace = { tower: 'tower', factory: 'factory', hr: 'commercial', construction: 'site' };
+      var personaToFacility = {
+        tower: 'برج مسکونی / اداری',
+        factory: 'کارخانه / انبار صنعتی',
+        hr: 'مرکز تجاری / درمانی',
+        construction: 'پروژه ساختمانی / کارگاهی'
+      };
+      var personaLabels = {
+        tower: 'برج و مجتمع مسکونی',
+        factory: 'کارخانه و شهرک صنعتی',
+        hr: 'منابع انسانی و حراست',
+        construction: 'پروژه عمرانی و کارگاهی'
+      };
 
       personaChips.forEach(function (btn) {
         btn.addEventListener('click', function () {
           var p = btn.getAttribute('data-persona');
+          state.activePersona = p || 'tower';
           personaChips.forEach(function (b) {
             b.className = 'persona-chip bg-white/10 hover:bg-white/20 text-white font-medium text-xs px-3 py-1.5 rounded-lg transition';
+            b.setAttribute('aria-pressed', 'false');
           });
           btn.className = 'persona-chip bg-cta-gold text-navy-dark font-bold text-xs px-3 py-1.5 rounded-lg transition';
+          btn.setAttribute('aria-pressed', 'true');
           if (personaTipEl && personaTips[p]) {
             personaTipEl.textContent = personaTips[p];
           }
+          if (personaActionEl && personaActions[p]) {
+            personaActionEl.textContent = personaActions[p].label;
+            personaActionEl.setAttribute('href', personaActions[p].href);
+          }
+          if (personaSyncBadge && personaLabels[p]) {
+            personaSyncBadge.textContent = '✓ خدمات و برآوردگر برای «' + personaLabels[p] + '» تنظیم شد';
+            personaSyncBadge.classList.remove('hidden');
+          }
 
-          // Persona Sync با تب خدمات و برآوردگر
+          // Persona Sync با تب خدمات، برآوردگر و فرم بازدید
           var svcTab = personaToService[p];
           if (svcTab) {
             var targetTabBtn = document.querySelector('[data-service-tab="' + svcTab + '"]');
@@ -125,8 +160,20 @@
           if (targetPlace && typeof selectEstimatorPlace === 'function') {
             selectEstimatorPlace(targetPlace);
           }
+          var visitFacEl = document.getElementById('visit-facility');
+          if (visitFacEl && personaToFacility[p]) {
+            visitFacEl.value = personaToFacility[p];
+          }
+          if (D && D.track) D.track('select_persona', { persona: p });
         });
       });
+
+      if (personaScrollBtn) {
+        personaScrollBtn.addEventListener('click', function () {
+          var svcEl = document.getElementById('services');
+          if (svcEl) svcEl.scrollIntoView({ behavior: 'smooth' });
+        });
+      }
 
       // ۴. فیلتر جدول و کارت‌های مقایسه نگهبان شخصی در برابر دیدبان امین توانا
       var compFilterBtns = document.querySelectorAll('.comp-filter-btn');
@@ -154,12 +201,13 @@
         });
       });
 
-      // ۵. تب‌های ۳ گانه خدمات تخصصی
+      // ۵. تب‌های ۴ گانه خدمات تخصصی
       var serviceTabBtns = document.querySelectorAll('.service-tab-btn');
       var servicePanels = {
         residential: document.getElementById('service-panel-residential'),
         industrial: document.getElementById('service-panel-industrial'),
-        construction: document.getElementById('service-panel-construction')
+        construction: document.getElementById('service-panel-construction'),
+        commercial: document.getElementById('service-panel-commercial')
       };
 
       serviceTabBtns.forEach(function (btn) {
@@ -186,7 +234,8 @@
       var placeNames = {
         tower: 'برج مسکونی / اداری',
         factory: 'کارخانه / انبار صنعتی',
-        site: 'کارگاه / پروژه ساختمانی'
+        site: 'کارگاه / پروژه ساختمانی',
+        commercial: 'مرکز تجاری / بیمارستان / سازمان'
       };
 
       // ارقام مستند قانون کار ۱۴۰۵:
@@ -236,7 +285,7 @@
         }
 
         // ضریب تخصصی نوع مکان و تجهیزات
-        var placeAddon = est.place === 'factory' ? 1400000 : (est.place === 'site' ? 900000 : 800000);
+        var placeAddon = est.place === 'factory' ? 1400000 : (est.place === 'commercial' ? 1100000 : (est.place === 'site' ? 900000 : 800000));
         var optAddon = (est.patrol ? 500000 : 0) + (est.formal ? 500000 : 0);
 
         var totalMonthly = (basePerPost + placeAddon + optAddon) * est.shifts;
@@ -366,14 +415,19 @@
         var calc = updateEstimatorUI();
         var recLabel = document.getElementById('quote-recipient-label');
         var detailsBox = document.getElementById('quote-details-summary');
+        var gateOverlay = document.getElementById('checklist-gate-overlay');
+        var gatedItems = document.querySelectorAll('[data-checklist-gated="true"]');
+        var isChecklistUnlocked = !!(userPhone || state.estimatorGated || state.checklistUnlocked);
+        var isExactPriceUnlocked = !!state.estimatorGated;
+
         if (recLabel) {
           recLabel.textContent = 'متقاضی: ' + (userName ? userName : 'کارفرمای محترم') + (userPhone ? ' (' + toPersianDigits(userPhone) + ')' : '');
         }
         var priceDisplay = calc.totalFormatted;
-        if (!userPhone && !state.estimatorGated) {
+        if (!isExactPriceUnlocked) {
           var rangeEl = document.getElementById('est-price-range');
           var rangeText = rangeEl ? rangeEl.textContent.trim() : 'بازه اولیه';
-          priceDisplay = rangeText + ' (جهت مشاهده رقم قطعی، شماره تماس خود را در برآوردگر ثبت فرمایید)';
+          priceDisplay = rangeText + ' (جهت مشاهده رقم قطعی، فرم برآوردگر را ثبت فرمایید)';
         }
         if (detailsBox) {
           detailsBox.innerHTML =
@@ -383,6 +437,18 @@
             toPersianDigits(calc.shifts) + ' پست همزمان (' + calc.headcount + ')</strong></div>' +
             '<div class="bg-white p-3 rounded-xl border border-slate-200"><span class="text-slate-500 block text-xs">برآورد پایه ماهانه (۱۴۰۵):</span><strong class="text-emerald-700">' +
             priceDisplay + '</strong></div>';
+        }
+        gatedItems.forEach(function (el) {
+          if (isChecklistUnlocked) el.classList.remove('hidden');
+          else el.classList.add('hidden');
+        });
+        if (gateOverlay) {
+          if (isChecklistUnlocked) gateOverlay.classList.add('hidden');
+          else gateOverlay.classList.remove('hidden');
+        }
+        if (btnPrintChecklist) {
+          if (isChecklistUnlocked) btnPrintChecklist.classList.remove('hidden');
+          else btnPrintChecklist.classList.add('hidden');
         }
         if (checklistModal) checklistModal.classList.remove('hidden');
         return calc;
@@ -398,7 +464,10 @@
           var hp = leadForm.querySelector('[name="website"]');
           var rawPhone = phoneInput ? phoneInput.value.trim() : '';
           if (!D.isValidMobile(rawPhone)) {
-            if (errEl) errEl.classList.remove('hidden');
+            if (errEl) {
+              errEl.textContent = 'لطفاً یک شماره موبایل معتبر ۱۱ رقمی (مانند 09123456789) وارد نمایید.';
+              errEl.classList.remove('hidden');
+            }
             return;
           }
           if (errEl) errEl.classList.add('hidden');
@@ -424,6 +493,7 @@
             }
             if (ok) {
               state.estimatorGated = true;
+              state.checklistUnlocked = true;
               state.hasConverted = true;
               var teaser = document.getElementById('est-price-teaser');
               var exact = document.getElementById('est-price-exact');
@@ -448,6 +518,16 @@
           openChecklistWithQuote('', '');
         });
       }
+      var btnUnlockChecklist = document.getElementById('btn-unlock-checklist');
+      if (btnUnlockChecklist) {
+        btnUnlockChecklist.addEventListener('click', function () {
+          if (checklistModal) checklistModal.classList.add('hidden');
+          var phoneField = document.getElementById('lead-phone');
+          var estSection = document.getElementById('shift-estimator');
+          if (estSection) estSection.scrollIntoView({ behavior: 'smooth' });
+          if (phoneField) setTimeout(function () { phoneField.focus(); }, 350);
+        });
+      }
       if (btnCloseChecklist && checklistModal) {
         btnCloseChecklist.addEventListener('click', function () {
           checklistModal.classList.add('hidden');
@@ -455,6 +535,7 @@
       }
       if (btnPrintChecklist) {
         btnPrintChecklist.addEventListener('click', function () {
+          if (D && D.track) D.track('download_legal_checklist', { source: 'estimator_modal' });
           window.print();
         });
       }
@@ -570,7 +651,10 @@
           var submitBtn = visitForm.querySelector('button[type="submit"]');
           var hp = visitForm.querySelector('[name="website"]');
           if (!fullName || !D.isValidMobile(mobile)) {
-            if (err) err.classList.remove('hidden');
+            if (err) {
+              err.textContent = 'لطفاً نام و یک شماره موبایل معتبر ۱۱ رقمی وارد فرمایید.';
+              err.classList.remove('hidden');
+            }
             return;
           }
           if (err) err.classList.add('hidden');
@@ -642,25 +726,51 @@
       var btnCloseExit = document.getElementById('btn-close-exit-modal');
       var exitForm = document.getElementById('exit-intent-form');
       var exitShown = false;
+      try {
+        if (sessionStorage.getItem('dideban_exit_shown') === '1') exitShown = true;
+      } catch (e) {}
+
+      function anyModalOpen() {
+        return [checklistModal, visitModal, licenseModal, exitModal].some(function (m) {
+          return m && !m.classList.contains('hidden');
+        });
+      }
 
       function showExitModal() {
-        if (exitShown || state.hasConverted || !exitModal) return;
+        if (exitShown || state.hasConverted || !exitModal || anyModalOpen()) return;
         exitShown = true;
+        try { sessionStorage.setItem('dideban_exit_shown', '1'); } catch (e) {}
         exitModal.classList.remove('hidden');
         if (D && D.track) D.track('exit_intent_shown', {});
       }
 
+      // تشخیص خروج دسکتاپ (حرکت ماوس به بالای viewport)
       document.addEventListener('mouseout', function (e) {
         if (e.clientY <= 5 && e.relatedTarget === null) {
           showExitModal();
         }
       });
 
+      // تشخیص خروج موبایل (زمان ۴۵ ثانیه یا اسکرول سریع به بالا پس از مطالعه ۳۵٪ صفحه)
       setTimeout(function () {
         if (!exitShown && !state.hasConverted && window.innerWidth < 640) {
           showExitModal();
         }
       }, 45000);
+
+      var maxScrollDepth = 0;
+      var lastScrollY = window.scrollY || 0;
+      window.addEventListener('scroll', function () {
+        if (exitShown || state.hasConverted || window.innerWidth >= 640) return;
+        var y = window.scrollY || 0;
+        var docH = Math.max(document.body.scrollHeight - window.innerHeight, 1);
+        var depth = y / docH;
+        if (depth > maxScrollDepth) maxScrollDepth = depth;
+        if (maxScrollDepth >= 0.35 && lastScrollY - y > 140 && y < 300) {
+          showExitModal();
+        }
+        lastScrollY = y;
+      }, { passive: true });
 
       if (btnCloseExit && exitModal) {
         btnCloseExit.addEventListener('click', function () {
@@ -677,26 +787,32 @@
           var hp = exitForm.querySelector('[name="website"]');
           var rawPhone = phoneInput ? phoneInput.value.trim() : '';
           if (!D.isValidMobile(rawPhone)) {
-            if (errEl) errEl.classList.remove('hidden');
+            if (errEl) {
+              errEl.textContent = 'لطفاً شماره موبایل معتبر وارد کنید.';
+              errEl.classList.remove('hidden');
+            }
             return;
           }
           if (errEl) errEl.classList.add('hidden');
           var submitBtn = exitForm.querySelector('button[type="submit"]');
-          var origLabel = submitBtn ? submitBtn.textContent : '';
+          var origLabel = submitBtn ? submitBtn.innerHTML : '';
           if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'در حال ارسال...'; }
           var normPhone = D.normalizeMobile ? D.normalizeMobile(rawPhone) : D.normalizeDigits(rawPhone);
+          var leadName = nameInput ? nameInput.value.trim() : '';
           D.submitLead({
             source: 'exit_intent_checklist',
-            name: nameInput ? nameInput.value.trim() : '',
+            name: leadName,
             mobile: normPhone,
             website: hp ? hp.value : ''
           }).then(function (ok) {
-            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = origLabel; }
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = origLabel; }
             if (ok) {
               state.hasConverted = true;
+              state.checklistUnlocked = true;
               if (D && D.track) D.track('exit_intent_lead', {});
               if (exitModal) exitModal.classList.add('hidden');
-              showToast('چک‌لیست حقوقی برای شما ارسال شد. کارشناسان ما تا ۱۵ دقیقه دیگر تماس می‌گیرند.');
+              openChecklistWithQuote(leadName, normPhone);
+              showToast('چک‌لیست ۱۰ نکته حقوقی باز شد و درخواست شما برای کارشناسان ما ثبت گردید.');
               exitForm.reset();
             } else {
               if (errEl) {

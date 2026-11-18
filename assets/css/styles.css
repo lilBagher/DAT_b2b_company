@@ -23,6 +23,11 @@ body {
   }
 }
 
+/* اطمینان از مخفی‌ماندن المان‌های hidden در کنار کلاس‌های ریسپانسیو مانند sm:flex */
+[hidden] {
+  display: none !important;
+}
+
 /* پشتیبانی از نوار ناوبری پایین در آیفون (Safe Area Inset) */
 .safe-area-bottom {
   padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));

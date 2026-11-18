@@ -9,10 +9,13 @@ header('Content-Type: application/json; charset=utf-8');
 header('X-Content-Type-Options: nosniff');
 
 // ---------- تنظیمات ----------
-const NOTIFY_EMAIL   = '';            // مثلاً sales@your-domain.ir ؛ خالی = بدون ایمیل
-const SMS_API_KEY    = '';            // کلید کاوه‌نگار؛ خالی = بدون پیامک
-const SMS_SENDER     = '';            // شماره خط ارسال‌کننده
-const SMS_MANAGER    = '';            // موبایل مدیر فروش برای پیامک آنی، مثلاً 09121234567
+const NOTIFY_EMAIL      = '';            // مثلاً sales@your-domain.ir ؛ خالی = بدون ایمیل
+const SMS_API_KEY       = '';            // کلید کاوه‌نگار؛ خالی = بدون پیامک
+const SMS_SENDER        = '';            // شماره خط ارسال‌کننده
+const SMS_MANAGER       = '';            // موبایل مدیر فروش برای پیامک آنی، مثلاً 09121234567
+const SMS_SEND_WELCOME  = true;          // ارسال پیامک خوش‌آمد خودکار به مشتری هنگام تنظیم SMS_API_KEY
+const CRM_WEBHOOK_URL   = '';            // آدرس وب‌هوک Google Sheets (Apps Script) یا CRM؛ خالی = غیرفعال
+const CRM_WEBHOOK_SECRET = '';           // کلید اختیاری احراز هویت وب‌هوک در هدر X-Webhook-Secret
 // -----------------------------
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') { http_response_code(405); echo '{"ok":false}'; exit; }
@@ -85,7 +88,40 @@ if (NOTIFY_EMAIL !== '') {
 if (SMS_API_KEY !== '' && SMS_MANAGER !== '') {
     $url = 'https://api.kavenegar.com/v1/' . rawurlencode(SMS_API_KEY) . '/sms/send.json?' .
            http_build_query(['receptor' => SMS_MANAGER, 'sender' => SMS_SENDER, 'message' => mb_substr($summary, 0, 300, 'UTF-8')]);
-    @file_get_contents($url, false, stream_context_create(['http' => ['timeout' => 4]]));
+    @file_get_contents($url, false, stream_context_create(['http' => ['timeout' => 4, 'ignore_errors' => true]]));
+}
+if (SMS_API_KEY !== '' && SMS_SEND_WELCOME) {
+    $welcomeName = $row[2] !== '' ? ($row[2] . ' گرامی، ') : 'کارفرمای گرامی، ';
+    $welcomeMsg = $welcomeName . "درخواست شما در مؤسسه مراقبتی حفاظتی دیدبان امین توانا (مجوز ماده ۱۲۲) ثبت شد. کارشناس ارشد ما حداکثر ظرف ۱۵ دقیقه آینده با شما تماس می‌گیرد.";
+    $wUrl = 'https://api.kavenegar.com/v1/' . rawurlencode(SMS_API_KEY) . '/sms/send.json?' .
+            http_build_query(['receptor' => $mobile, 'sender' => SMS_SENDER, 'message' => mb_substr($welcomeMsg, 0, 300, 'UTF-8')]);
+    @file_get_contents($wUrl, false, stream_context_create(['http' => ['timeout' => 3, 'ignore_errors' => true]]));
+}
+if (CRM_WEBHOOK_URL !== '') {
+    $webhookPayload = json_encode([
+        'timestamp' => $row[0],
+        'source'    => $row[1],
+        'name'      => $row[2],
+        'mobile'    => $row[3],
+        'facility'  => $row[4],
+        'details'   => $row[5],
+        'estimate'  => $row[6],
+        'page'      => $row[7],
+        'utm'       => is_array($d['utm'] ?? null) ? $d['utm'] : []
+    ], JSON_UNESCAPED_UNICODE);
+    $headers = "Content-Type: application/json; charset=utf-8\r\n";
+    if (CRM_WEBHOOK_SECRET !== '') {
+        $headers .= "X-Webhook-Secret: " . CRM_WEBHOOK_SECRET . "\r\n";
+    }
+    @file_get_contents(CRM_WEBHOOK_URL, false, stream_context_create([
+        'http' => [
+            'method'        => 'POST',
+            'header'        => $headers,
+            'content'       => $webhookPayload,
+            'timeout'       => 3,
+            'ignore_errors' => true
+        ]
+    ]));
 }
 
 echo '{"ok":true}';
